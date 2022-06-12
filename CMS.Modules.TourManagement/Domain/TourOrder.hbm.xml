@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.TourManagement.Domain.TourOrder, CMS.Modules.TourManagement" table="tmt_TourOrder">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="OrderId" length="4" sql-type="int" not-null="true" unique="true" index="PK__tmh_HotelOrder__0544AF38"/>
+			<generator class="native" />
+		</id>
+    <many-to-one name="Tour" class="CMS.Modules.TourManagement.Domain.Tour, CMS.Modules.TourManagement">
+      <column name="TourId" length="4" sql-type="int" not-null="true"/>
+    </many-to-one>
+    <property name="FullName" type="String">
+      <column name="FullName" length="300" sql-type="nvarchar" not-null="false"/>
+    </property>  
+		<property name="SpecialRequest" type="String">
+			<column name="SpecialRequest" length="1000" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Email" type="String">
+			<column name="Email" length="100" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Address" type="String">
+			<column name="Address" length="500" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="City" type="String">
+			<column name="City" length="100" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Country" type="String">
+			<column name="Country" length="100" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Telephone" type="String">
+			<column name="Telephone" length="50" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Mobile" type="String">
+			<column name="Mobile" length="50" sql-type="nvarchar" not-null="false"/>
+		</property>
+    <many-to-one name="User" class="CMS.Core.Domain.User, CMS.Core" lazy="false">
+      <column name="UserId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+		<property name="IP" type="String">
+			<column name="IP" length="15" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="ReadStatus" type="Boolean">
+			<column name="ReadStatus" length="1" sql-type="bit" not-null="false"/>
+		</property>
+		<property name="OrderStatus" type="Int32">
+			<column name="OrderStatus" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="OrderDate" type="DateTime">
+			<column name="OrderDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="EstimatedPrice" type="Decimal">
+			<column name="EstimatedPrice" length="8" sql-type="money" not-null="false"/>
+		</property>
+	</class>
+</hibernate-mapping>

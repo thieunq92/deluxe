@@ -1,0 +1,13 @@
+﻿<p>THÔNG BÁO XÁC NHẬN BOOKING</p>
+<ul>
+<li>Booking code: {bookingcode}</li>
+<li>Đối tác: {agency}</li>
+<li>Khởi hành ngày: {startdate}</li>
+<li>Chương trình: {trip}</li>
+<li>Số lượng khách: {customernumber}</li>
+<li>Người tạo booking: {submiter}</li>
+</ul>
+<p>&nbsp;</p>
+<p>Link to booking: <a href = {link}> click here </a></p>
+<p>&nbsp;</p>
+<p>Vui lòng không trả lời email này</p>

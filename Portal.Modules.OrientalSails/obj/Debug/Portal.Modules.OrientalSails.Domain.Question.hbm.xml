@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.Question, Portal.Modules.OrientalSails" table="sv_Question">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+		<many-to-one name="CreatedBy" class="CMS.Core.Domain.User, CMS.Core" lazy="false" not-found="ignore">
+			<column name="CreatedBy" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<property name="CreatedDate" type="DateTime">
+			<column name="CreatedDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<many-to-one name="ModifiedBy" class="CMS.Core.Domain.User, CMS.Core" lazy="false" not-found="ignore">
+			<column name="ModifiedBy" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<property name="ModifiedDate" type="DateTime">
+			<column name="ModifiedDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="Deleted" type="Boolean">
+			<column name="Deleted" length="1" sql-type="bit" not-null="false"/>
+		</property>
+		<property name="Name" type="String">
+			<column name="Name" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+	<property name="Content" type="String">
+			<column name="Content" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<many-to-one name="Group" class="Portal.Modules.OrientalSails.Domain.QuestionGroup, Portal.Modules.OrientalSails" lazy="false">
+			<column name="GroupId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

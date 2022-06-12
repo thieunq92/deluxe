@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.SailsPriceTable, Portal.Modules.OrientalSails" table="os_SailPriceTable">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="TableId" length="4" sql-type="int" not-null="true" unique="true" index="PK_os_ExtraOption"/>
+			<generator class="native" />
+		</id>
+		<property name="StartDate" type="DateTime">
+			<column name="StartDate" length="250" sql-type="datetime" not-null="false"/>
+		</property>
+    <property name="EndDate" type="DateTime">
+      <column name="EndDate" length="250" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Note" type="String">
+      <column name="Note" length="250" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="TripOption" type="Portal.Modules.OrientalSails.Web.Util.TripOption, Portal.Modules.OrientalSails">
+      <column name="TripOption" length="4" sql-type="int" not-null="false"/>
+    </property>    
+    <many-to-one name="Trip" class="Portal.Modules.OrientalSails.Domain.SailsTrip, Portal.Modules.OrientalSails">
+      <column name="TripId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Cruise" class="Portal.Modules.OrientalSails.Domain.Cruise, Portal.Modules.OrientalSails">
+      <column name="CruiseId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Agency" class="Portal.Modules.OrientalSails.Domain.Agency, Portal.Modules.OrientalSails">
+      <column name="AgencyId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

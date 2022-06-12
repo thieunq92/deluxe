@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.AnswerSheet, Portal.Modules.OrientalSails" table="sv_AnswerSheet">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>		
+		<property name="Name" type="String">
+			<column name="Name" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="IsSent" type="Boolean">
+			<column name="IsSentEmail" length="1" sql-type="bit" not-null="false"/>
+		</property>
+		<property name="Address" type="String">
+			<column name="Address" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Email" type="String">
+			<column name="Email" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Date" type="DateTime">
+			<column name="Date" length="1" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="Deleted" type="Boolean">
+			<column name="Deleted" length="1" sql-type="bit" not-null="false"/>
+		</property>
+		<property name="Guide" type="string">
+			<column name="Guide" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Driver" type="string">
+			<column name="Driver" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="RoomNumber" type="string">
+			<column name="RoomNumber" length="1" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<many-to-one name="Nationality" class="Portal.Modules.OrientalSails.Domain.Nationality, Portal.Modules.OrientalSails">
+			<column name="NationalityId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="Booking" class="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails">
+			<column name="BookingId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="Cruise" class="Portal.Modules.OrientalSails.Domain.Cruise, Portal.Modules.OrientalSails">
+			<column name="CruiseId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<bag name="Options" inverse="true" cascade="all-delete-orphan">
+			<key column="AnswerSheetId"/>
+			<one-to-many class="Portal.Modules.OrientalSails.Domain.AnswerOption, Portal.Modules.OrientalSails"/>
+		</bag>
+		<bag name="Groups" inverse="true" cascade="all-delete-orphan">
+			<key column="AnswerSheetId"/>
+			<one-to-many class="Portal.Modules.OrientalSails.Domain.AnswerGroup, Portal.Modules.OrientalSails"/>
+		</bag>
+	</class>
+</hibernate-mapping>

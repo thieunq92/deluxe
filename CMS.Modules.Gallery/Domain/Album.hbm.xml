@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.Gallery.Domain.Album, CMS.Modules.Gallery" table="cm_galleryalbum">
+
+		<id name="Id" column="albumid" type="Int32" unsaved-value="-1">
+			<generator class="native">
+				<param name="sequence">cm_galleryalbum_albumid_seq</param>
+			</generator>
+		</id>
+
+		<timestamp name="UpdateTimestamp" column="updatetimestamp" />
+
+		<property name="Title" column="title" type="String" length="100" unique="false" />
+		<property name="Description" column="description" type="String" length="255" />
+		<property name="Active" column="active" type="Boolean" />
+		<property name="PhotoCount" column="photocount" type="Int32" />
+    <property name="UseSimpleViewer" column="UseSimpleViewer" type="Boolean" />
+
+		<many-to-one name="Section" class="CMS.Core.Domain.Section, CMS.Core" column="sectionid" cascade="none" />
+		<many-to-one name="Site" class="CMS.Core.Domain.Site, CMS.Core" column="siteid" not-null="true" cascade="none" />
+		<many-to-one name="CreatedBy" class="CMS.Core.Domain.User, CMS.Core" column="createdby" cascade="none" lazy="false"/>
+		<many-to-one name="ModifiedBy" class="CMS.Core.Domain.User, CMS.Core" column="modifiedby" cascade="none"  lazy="false"/>
+
+		<bag name="Photos" cascade="none" lazy="true" order-by="`Order`">
+			<key column="albumid" />
+			<one-to-many class="CMS.Modules.Gallery.Domain.Photo, CMS.Modules.Gallery" />
+		</bag>
+    <bag name="Comments" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key column="AlbumId"/>
+      <one-to-many class="CMS.Modules.Gallery.Domain.AlbumComment, CMS.Modules.Gallery"/>
+    </bag>
+
+	</class>
+</hibernate-mapping>

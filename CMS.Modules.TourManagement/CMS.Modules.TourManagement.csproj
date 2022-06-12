@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{958B8344-FCCE-4F04-AE30-881555ADCB79}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.Modules.TourManagement</RootNamespace>
+    <AssemblyName>CMS.Modules.TourManagement</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.20821, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.AutoTx, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\Castle.Facilities.AutoTx.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.NHibernateIntegration, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\Castle.Facilities.NHibernateIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Transaction, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\Castle.Services.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.5.2912.21007, Culture=neutral, PublicKeyToken=4f86767c9b519a06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Caches.SysCache, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=6876f2ea66c9f443, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\NHibernate.Caches.SysCache.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\EventHandler.cs" />
+    <Compile Include="DataAccess\ITourDao.cs" />
+    <Compile Include="DataAccess\TourDao.cs" />
+    <Compile Include="Domain\AgencyPolicy.cs" />
+    <Compile Include="Domain\BaseOrder.cs" />
+    <Compile Include="Domain\ServiceNetPrice.cs" />
+    <Compile Include="Domain\ServiceSalePrice.cs" />
+    <Compile Include="Domain\TourOrder.cs" />
+    <Compile Include="Domain\TourComment.cs" />
+    <Compile Include="Domain\TourRelated.cs" />
+    <Compile Include="Domain\TourOtherExpense.cs" />
+    <Compile Include="Domain\TourOtherExpensePrice.cs" />
+    <Compile Include="Domain\Provider_Category.cs" />
+    <Compile Include="Domain\ProviderCategory.cs" />
+    <Compile Include="Domain\TourPackageConfig.cs" />
+    <Compile Include="Domain\TourPackagePrice.cs" />
+    <Compile Include="Domain\TourBoatSalePrice.cs" />
+    <Compile Include="Domain\TourPrice.cs" />
+    <Compile Include="Domain\TourSalePrice.cs" />
+    <Compile Include="Domain\TourService.cs" />
+    <Compile Include="Domain\TourTransportRent.cs" />
+    <Compile Include="Domain\TourTransportSalePrice.cs" />
+    <Compile Include="Domain\TourRegion.cs" />
+    <Compile Include="Domain\Company.cs" />
+    <Compile Include="Domain\Contract.cs" />
+    <Compile Include="Domain\Tour.cs" />
+    <Compile Include="Domain\TourBoatPriceConfig.cs" />
+    <Compile Include="Domain\TourEntranceFeePriceConfig.cs" />
+    <Compile Include="Domain\TourGuidePriceConfig.cs" />
+    <Compile Include="Domain\TourHotelPriceConfig.cs" />
+    <Compile Include="Domain\TourHotelSalePrice.cs" />
+    <Compile Include="Domain\TourRestaurantPriceConfig.cs" />
+    <Compile Include="Domain\TourRestaurantSalePrice.cs" />
+    <Compile Include="Domain\TourTransportPriceConfig.cs" />
+    <Compile Include="Domain\TourType.cs" />
+    <Compile Include="Domain\Currency.cs" />
+    <Compile Include="Domain\Email.cs" />
+    <Compile Include="Domain\Fax.cs" />
+    <Compile Include="Domain\Location.cs" />
+    <Compile Include="Domain\Phone.cs" />
+    <Compile Include="Domain\Provider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TourManagementModule.cs" />
+    <Compile Include="TourMenuModule.cs" />
+    <Compile Include="TourModuleBase.cs" />
+    <Compile Include="TourSearchInputModule.cs" />
+    <Compile Include="Util\LocationHelper.cs" />
+    <Compile Include="Web\Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\AdminComments.aspx.cs">
+      <DependentUpon>AdminComments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\AdminComments.aspx.designer.cs">
+      <DependentUpon>AdminComments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\AgentList.aspx.cs">
+      <DependentUpon>AgentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\AgentList.aspx.designer.cs">
+      <DependentUpon>AgentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\AgentPriceList.aspx.cs">
+      <DependentUpon>AgentPriceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\AgentPriceList.aspx.designer.cs">
+      <DependentUpon>AgentPriceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\AgentUserList.aspx.cs">
+      <DependentUpon>AgentUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\AgentUserList.aspx.designer.cs">
+      <DependentUpon>AgentUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\OtherExpenses.ascx.cs">
+      <DependentUpon>OtherExpenses.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\OtherExpenses.ascx.designer.cs">
+      <DependentUpon>OtherExpenses.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderCategories.aspx.cs">
+      <DependentUpon>ProviderCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderCategories.aspx.designer.cs">
+      <DependentUpon>ProviderCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\Currencies.aspx.cs">
+      <DependentUpon>Currencies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\Currencies.aspx.designer.cs">
+      <DependentUpon>Currencies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\PositionEdit.aspx.cs">
+      <DependentUpon>PositionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\PositionEdit.aspx.designer.cs">
+      <DependentUpon>PositionEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\PositionList.aspx.cs">
+      <DependentUpon>PositionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\PositionList.aspx.designer.cs">
+      <DependentUpon>PositionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderEdit.aspx.cs">
+      <DependentUpon>ProviderEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderEdit.aspx.designer.cs">
+      <DependentUpon>ProviderEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderList.aspx.cs">
+      <DependentUpon>ProviderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderList.aspx.designer.cs">
+      <DependentUpon>ProviderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderView.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ProviderView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\ProviderView.aspx.designer.cs">
+      <DependentUpon>ProviderView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\RelatedTour.ascx.cs">
+      <DependentUpon>RelatedTour.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\RelatedTour.ascx.designer.cs">
+      <DependentUpon>RelatedTour.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourEdit.aspx.cs">
+      <DependentUpon>TourEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourEdit.aspx.designer.cs">
+      <DependentUpon>TourEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourConfig.aspx.cs">
+      <DependentUpon>TourConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourConfig.aspx.designer.cs">
+      <DependentUpon>TourConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourGalleries.ascx.cs">
+      <DependentUpon>TourGalleries.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourGalleries.ascx.designer.cs">
+      <DependentUpon>TourGalleries.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourList.aspx.cs">
+      <DependentUpon>TourList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourList.aspx.designer.cs">
+      <DependentUpon>TourList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourMaster.Master.cs">
+      <DependentUpon>TourMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourMaster.Master.designer.cs">
+      <DependentUpon>TourMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourPackagePriceConfig.aspx.cs">
+      <DependentUpon>TourPackagePriceConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourPackagePriceConfig.aspx.designer.cs">
+      <DependentUpon>TourPackagePriceConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourPackageSelector.ascx.cs">
+      <DependentUpon>TourPackageSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourPackageSelector.ascx.designer.cs">
+      <DependentUpon>TourPackageSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourRegions.aspx.cs">
+      <DependentUpon>TourRegions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourRegions.aspx.designer.cs">
+      <DependentUpon>TourRegions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Admin\TourTypes.aspx.cs">
+      <DependentUpon>TourTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Admin\TourTypes.aspx.designer.cs">
+      <DependentUpon>TourTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Controls\LocationTree.ascx.cs">
+      <DependentUpon>LocationTree.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Controls\LocationTree.ascx.designer.cs">
+      <DependentUpon>LocationTree.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FeaturedTourModule.cs" />
+    <Compile Include="Web\FeaturedTours.ascx.cs">
+      <DependentUpon>FeaturedTours.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\FeaturedTours.ascx.designer.cs">
+      <DependentUpon>FeaturedTours.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\LocationTree.ascx.cs">
+      <DependentUpon>LocationTree.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\LocationTree.ascx.designer.cs">
+      <DependentUpon>LocationTree.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Order.ascx.cs">
+      <DependentUpon>Order.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Order.ascx.designer.cs">
+      <DependentUpon>Order.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\TourDetail.ascx.cs">
+      <DependentUpon>TourDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\TourDetail.ascx.designer.cs">
+      <DependentUpon>TourDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\TourmanagementDaoService.asmx.cs">
+      <DependentUpon>TourmanagementDaoService.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\TourRegionMenu.ascx.cs">
+      <DependentUpon>TourRegionMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\TourRegionMenu.ascx.designer.cs">
+      <DependentUpon>TourRegionMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Tours.ascx.cs">
+      <DependentUpon>Tours.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Tours.ascx.designer.cs">
+      <DependentUpon>Tours.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\TourSearchInput.ascx.cs">
+      <DependentUpon>TourSearchInput.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\TourSearchInput.ascx.designer.cs">
+      <DependentUpon>TourSearchInput.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\UI\SelectorControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\TourAdminBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\TourControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\UI\TourManagementAdminBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Install\Database\mssql2000\1.0.1.sql" />
+    <None Include="Install\Database\mssql2000\install.sql" />
+    <None Include="Install\Database\mssql2000\uninstall.sql" />
+    <Content Include="Web\Admin\TourMaster.Master" />
+    <Content Include="Web\Admin\Admin.Master" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\CMS.Core.csproj">
+      <Project>{723B7D30-6472-4B96-8D09-4F094C96650E}</Project>
+      <Name>CMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Modules.Gallery\CMS.Modules.Gallery.csproj">
+      <Project>{F9BB3C77-A644-4353-BAEA-33D7E23B774D}</Project>
+      <Name>CMS.Modules.Gallery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Web.Extensions\CMS.Web.Extensions.csproj">
+      <Project>{5AB6EF41-3371-4A1E-9061-B5F3DFD3964A}</Project>
+      <Name>CMS.Web.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerControls\CMS.ServerControls.csproj">
+      <Project>{C64DAA00-AAB1-4AC7-ADE2-119B53B9666A}</Project>
+      <Name>CMS.ServerControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web\CMS.Web.csproj">
+      <Project>{DD158F08-6E8F-4234-B3F6-A5402C8E34CC}</Project>
+      <Name>CMS.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\AgencyPolicy.hbm.xml" />
+    <EmbeddedResource Include="Domain\Email.hbm.xml" />
+    <EmbeddedResource Include="Domain\Phone.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\Location.hbm.xml" />
+    <EmbeddedResource Include="Web\Admin\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Domain\Fax.hbm.xml" />
+    <EmbeddedResource Include="Domain\Currency.hbm.xml" />
+    <EmbeddedResource Include="Domain\Contract.hbm.xml" />
+    <EmbeddedResource Include="Domain\Company.hbm.xml" />
+    <EmbeddedResource Include="Domain\Provider.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourType.hbm.xml" />
+    <EmbeddedResource Include="Domain\Tour.hbm.xml" />
+    <EmbeddedResource Include="Web\Resources\Strings.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Domain\TourHotelPriceConfig.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourHotelSalePrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourRestaurantPriceConfig.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourRestaurantSalePrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourGuidePriceConfig.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourTransportPriceConfig.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourEntranceFeePriceConfig.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourBoatPriceConfig.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourRegion.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourTransportSalePrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourBoatSalePrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourPackagePrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourPrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourSalePrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourTransportRent.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourPackageConfig.hbm.xml" />
+    <EmbeddedResource Include="Domain\ProviderCategory.hbm.xml" />
+    <EmbeddedResource Include="Domain\Provider_Category.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourOtherExpensePrice.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourOtherExpense.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourRelated.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourComment.hbm.xml" />
+    <EmbeddedResource Include="Domain\TourOrder.hbm.xml" />
+    <Content Include="Domain\ServiceNetPrice.hbm.xml" />
+    <Content Include="Domain\ServiceSalePrice.hbm.xml" />
+    <Content Include="Domain\TourService.hbm.xml" />
+    <Content Include="Web\Admin\AdminComments.aspx" />
+    <Content Include="Web\Admin\AgentList.aspx" />
+    <Content Include="Web\Admin\AgentPriceList.aspx" />
+    <Content Include="Web\Admin\AgentUserList.aspx" />
+    <Content Include="Web\Admin\OtherExpenses.ascx" />
+    <Content Include="Web\Admin\ProviderCategories.aspx" />
+    <Content Include="Web\Admin\Css\asiana\Copy of theme.css" />
+    <Content Include="Web\Admin\Css\asiana\ie-sucks.css" />
+    <Content Include="Web\Admin\Css\asiana\iepngfix.htc" />
+    <Content Include="Web\Admin\Css\asiana\img\bg.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_blue.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_brown.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_light_green.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_menu_blue.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_menu_green.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_menu_mix.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_menu_red.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\bg_mix.jpg" />
+    <Content Include="Web\Admin\Css\asiana\img\form_blue.gif" />
+    <Content Include="Web\Admin\Css\asiana\img\form_brown.gif" />
+    <Content Include="Web\Admin\Css\asiana\img\form_green.gif" />
+    <Content Include="Web\Admin\Css\asiana\img\form_mix.gif" />
+    <Content Include="Web\Admin\Css\asiana\img\form_red.gif" />
+    <Content Include="Web\Admin\Css\asiana\style.css" />
+    <Content Include="Web\Admin\Css\asiana\switch.css" />
+    <Content Include="Web\Admin\Css\asiana\theme.css" />
+    <Content Include="Web\Admin\Css\asiana\theme1.css" />
+    <Content Include="Web\Admin\Css\asiana\theme2.css" />
+    <Content Include="Web\Admin\Css\asiana\theme3.css" />
+    <Content Include="Web\Admin\Css\asiana\theme4.css" />
+    <Content Include="Web\Admin\Css\asiana\tour.css" />
+    <Content Include="Web\Admin\Css\tour.css" />
+    <Content Include="Web\Admin\Currencies.aspx" />
+    <Content Include="Web\Admin\Home.aspx" />
+    <Content Include="Web\Admin\PositionEdit.aspx" />
+    <Content Include="Web\Admin\PositionList.aspx" />
+    <Content Include="Web\Admin\ProviderEdit.aspx" />
+    <Content Include="Web\Admin\ProviderList.aspx" />
+    <Content Include="Web\Admin\ProviderView.aspx" />
+    <Content Include="Web\Admin\RelatedTour.ascx" />
+    <Content Include="Web\Admin\TourEdit.aspx" />
+    <Content Include="Web\Admin\TourConfig.aspx" />
+    <Content Include="Web\Admin\TourGalleries.ascx" />
+    <Content Include="Web\Admin\TourList.aspx" />
+    <Content Include="Web\Admin\TourPackagePriceConfig.aspx" />
+    <Content Include="Web\Admin\TourPackageSelector.ascx" />
+    <Content Include="Web\Admin\TourRegions.aspx" />
+    <Content Include="Web\Admin\TourTypes.aspx" />
+    <Content Include="Web\Controls\LocationTree.ascx" />
+    <Content Include="Web\FeaturedTours.ascx" />
+    <Content Include="Web\Images\arrow_down.gif" />
+    <Content Include="Web\Images\arrow_down.png" />
+    <Content Include="Web\Images\arrow_up.gif" />
+    <Content Include="Web\Images\arrow_up.png" />
+    <Content Include="Web\Images\delete_file.gif" />
+    <Content Include="Web\Images\edit.gif" />
+    <Content Include="Web\Images\email.gif" />
+    <Content Include="Web\Images\fax.gif" />
+    <Content Include="Web\Images\house.gif" />
+    <Content Include="Web\Images\image.png" />
+    <Content Include="Web\Images\location.gif" />
+    <Content Include="Web\Images\phone.gif" />
+    <Content Include="Web\Images\reddot.GIF" />
+    <Content Include="Web\LocationTree.ascx" />
+    <Content Include="Web\Order.ascx" />
+    <Content Include="Web\Theme\Standard\tour.css" />
+    <Content Include="Web\Theme\Standard\Images\album.gif" />
+    <Content Include="Web\Theme\Standard\Images\arrow.gif" />
+    <Content Include="Web\Theme\Standard\Images\boxbottom.gif" />
+    <Content Include="Web\Theme\Standard\Images\boxtop.gif" />
+    <Content Include="Web\Theme\Standard\Images\house.gif" />
+    <Content Include="Web\Theme\Standard\Images\list.gif" />
+    <Content Include="Web\Theme\Standard\Images\listbg_alternate.gif" />
+    <Content Include="Web\Theme\Standard\Images\map.gif" />
+    <Content Include="Web\TourDetail.ascx" />
+    <Content Include="Web\TourmanagementDaoService.asmx" />
+    <Content Include="Web\TourRegionMenu.ascx" />
+    <Content Include="Web\Tours.ascx" />
+    <Content Include="Web\TourSearchInput.ascx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3151</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y "$(ProjectDir)"Web\*.as?x "$(SolutionDir)"Web\Modules\TourManagement\
+xcopy /s /y "$(ProjectDir)"Web\Theme\*.* "$(SolutionDir)"Web\Modules\TourManagement\Theme\
+xcopy /s /y "$(ProjectDir)"Web\*.css "$(SolutionDir)"Web\Modules\TourManagement\
+xcopy /s /y "$(ProjectDir)"Web\*.Master "$(SolutionDir)"Web\Modules\TourManagement\
+xcopy /s /y "$(ProjectDir)"Install\Database\*.sql "$(SolutionDir)"Web\Modules\TourManagement\Install\Database\
+xcopy /s /y "$(ProjectDir)"Web\Images\*.* "$(SolutionDir)"Web\Modules\TourManagement\Images\
+xcopy /s /y "$(TargetDir)"CMS.Modules.TourManagement*.dll "$(SolutionDir)"Web\bin\
+xcopy /s /y "$(ProjectDir)"Web\Admin\Css\asiana\*.*  "$(SolutionDir)"Web\Modules\TourManagement\Admin\Css\asiana\</PostBuildEvent>
+  </PropertyGroup>
+</Project>

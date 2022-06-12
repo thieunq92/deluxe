@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails" table="os_Booking" lazy="true">
+    <id name="Id" type="Int32" unsaved-value="-1">
+      <column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Booking__5FB337D6"/>
+      <generator class="native" />
+    </id>
+    <property name="BookingId" type="String" formula="Id">
+    </property>
+    <property name="CustomBookingCode" type="String" formula="CustomBookingId">
+    </property>
+    <property name="Deleted" type="Boolean">
+      <column name="Deleted" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsApproved" type="Boolean">
+      <column name="IsApproved" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="Group" type="int">
+      <column name="GroupNo" length="1" sql-type="int" not-null="false"/>
+    </property>
+    <many-to-one name="CreatedBy" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="CreatedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="CreatedDate" type="DateTime">
+      <column name="CreatedDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <many-to-one name="ModifiedBy" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="ModifiedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="ModifiedDate" type="DateTime">
+      <column name="ModifiedDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <many-to-one name="ConfirmedBy" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="ConfirmedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Partner" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="PartnerId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <bag name="Customers" inverse="true" cascade="none" where="type!=4">
+      <key column="BookingId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.Customer, Portal.Modules.OrientalSails"/>
+    </bag>
+    <many-to-one name="Sale" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="SaleId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="StartDate" type="DateTime">
+      <column name="StartDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="EndDate" type="DateTime">
+      <column name="EndDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="CustomBookingId" type="Int32">
+      <column name="CustomBookingId" length="8" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Amended" type="Int32">
+      <column name="Amended" length="8" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Status" type="Portal.Modules.OrientalSails.Web.Util.StatusType, Portal.Modules.OrientalSails">
+      <column name="Status" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AccountingStatus" type="Portal.Modules.OrientalSails.Domain.AccountingStatus, Portal.Modules.OrientalSails">
+      <column name="AccountingStatus" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="AgencyCode" type="String">
+      <column name="AgencyCode" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="TripOption" type="Portal.Modules.OrientalSails.Web.Util.TripOption, Portal.Modules.OrientalSails">
+      <column name="TripOption" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Total" type="Double">
+      <column name="Total" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="TotalVND" type="Double">
+      <column name="TotalVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="IsVND" type="Boolean">
+      <column name="IsVND" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsGuideCollectVND" type="Boolean">
+      <column name="IsGuideCollectVND" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsDriverCollectVND" type="Boolean">
+      <column name="IsDriverCollectVND" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsCommissionVND" type="Boolean">
+      <column name="IsCommissionVND" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsCancelPayVND" type="Boolean">
+      <column name="IsCancelPayVND" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="Commission" type="Double">
+      <column name="Commission" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="CommissionVND" type="Double">
+      <column name="CommissionVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="ComUSDpayed" type="Double">
+      <column name="ComUSDpayed" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="ComVNDpayed" type="Double">
+      <column name="ComVNDPayed" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="ComRate" type="Double">
+      <column name="ComRate" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="GuideCollect" type="Double">
+      <column name="GuideCollect" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="DriverCollect" type="Double">
+      <column name="DriverCollect" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="GuideCollectVND" type="Double">
+      <column name="GuideCollectVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="DriverCollectVND" type="Double">
+      <column name="DriverCollectVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="GuideCollected" type="Boolean">
+      <column name="GuideCollected" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="DriverCollected" type="Boolean">
+      <column name="DriverCollected" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="GuideCollectedUSD" type="Double">
+      <column name="GuideCollectedUSD" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="DriverCollectedUSD" type="Double">
+      <column name="DriverCollectedUSD" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="GuideCollectedVND" type="Double">
+      <column name="GuideCollectedVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="DriverCollectedVND" type="Double">
+      <column name="DriverCollectedVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="GuideCollectedRemain" type="Double" formula="CASE WHEN (CurrencyRate > 0 ) THEN (GuideCollect - GuideCollectedVND/CurrencyRate - GuideCollectedUSD) ELSE GuideCollect END">
+    </property>
+    <property name="AgencyRemain" type="Double" formula="CASE WHEN (CurrencyRate > 0 ) THEN (Total - GuideCollect - PaidBase/CurrencyRate - Paid) ELSE Total - GuideCollect - Paid END">
+    </property>
+    <property name="GuideConfirmed" type="Boolean">
+      <column name="GuideConfirmed" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="AgencyConfirmed" type="Boolean">
+      <column name="AgencyConfirmed" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="ComPaid" type="Boolean">
+      <column name="ComPaid" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="TransferCost" type="Double">
+      <column name="TransferCost" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="IsTransferred" type="Boolean">
+      <column name="IsTransferred" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="Paid" type="Double">
+      <column name="Paid" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Note" type="String">
+      <column name="Note" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="PickupAddress" type="String">
+      <column name="PickupAddress" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="SpecialRequest" type="String">
+      <column name="SpecialRequest" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <many-to-one name="Booker" class="Portal.Modules.OrientalSails.Domain.AgencyContact, Portal.Modules.OrientalSails">
+      <column name="BookerId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="CurrencyRate" type="double">
+      <column name="CurrencyRate" sql-type="money" not-null="false"/>
+    </property>
+    <property name="PaidBase" type="double">
+      <column name="PaidBase" sql-type="money" not-null="false"/>
+    </property>
+    <property name="IsPaid" type="Boolean">
+      <column name="IsPaid" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsPaymentNeeded" type="Boolean">
+      <column name="IsPaymentNeeded" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsCharter" type="Boolean">
+      <column name="IsCharter" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="TransferAdult" type="Int32">
+      <column name="TransferAdult" sql-type="int" not-null="false"/>
+    </property>
+    <property name="TransferChildren" type="Int32">
+      <column name="TransferChildren" sql-type="int" not-null="false"/>
+    </property>
+    <property name="TransferBaby" type="Int32">
+      <column name="TransferBaby" sql-type="int" not-null="false"/>
+    </property>
+    <property name="HasInvoice" type="Boolean">
+      <column name="Invoice" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="CancelPay" type="Double">
+      <column name="CancelPay" sql-type="money" not-null="false"/>
+    </property>
+    <property name="CancelPayVND" type="Double">
+      <column name="CancelPayVND" sql-type="money" not-null="false"/>
+    </property>
+    <property name="GuideOnboard" type="Boolean">
+      <column name="GuideOnboard" length="1" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="Guide" type="String">
+      <column name="Guide" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Driver" type="String">
+      <column name="Driver" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="PaidDate" type="DateTime">
+      <column name="PaidDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="ComPaidDate" type="DateTime">
+      <column name="ComPaidDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="LockDate" type="DateTime">
+      <column name="LockDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="PickupTime" type="DateTime">
+      <column name="PickupTime" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="SeeoffTime" type="DateTime">
+      <column name="SeeoffTime" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="PUFlightDetails" type="String">
+      <column name="PUFlightDetails" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="PUCarRequirements" type="String">
+      <column name="PUCarRequirements" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="SOFlightDetails" type="String">
+      <column name="SOFlightDetails" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="SOCarRequirements" type="String">
+      <column name="SOCarRequirements" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="PUPickupAddress" type="String">
+      <column name="PUPickupAddress" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="PUDropoffAddress" type="String">
+      <column name="PUDropoffAddress" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="SOPickupAddress" type="String">
+      <column name="SOPickupAddress" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="SODropoffAddress" type="String">
+      <column name="SODropoffAddress" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="DiscountAmount" type="Double">
+      <column name="DiscountAmount" sql-type="money"/>
+    </property>
+    <property name="DiscountPercent" type="Double">
+      <column name="DiscountPercent" sql-type="float" not-null="false" />  
+    </property>
+    <property name="DiscountCurrencyType" type="String">
+      <column name="DiscountCurrencyType" sql-type="nvarchar" not-null="false"/>  
+    </property>
+    <many-to-one name="LockBy" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="LockBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Trip" class="Portal.Modules.OrientalSails.Domain.SailsTrip, Portal.Modules.OrientalSails">
+      <column name="TripId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Cruise" class="Portal.Modules.OrientalSails.Domain.Cruise, Portal.Modules.OrientalSails">
+      <column name="CruiseId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Agency" class="Portal.Modules.OrientalSails.Domain.Agency, Portal.Modules.OrientalSails">
+      <column name="AgencyId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="TransferTo" class="Portal.Modules.OrientalSails.Domain.Agency, Portal.Modules.OrientalSails">
+      <column name="TransferTo" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Charter" class="Portal.Modules.OrientalSails.Domain.Locked, Portal.Modules.OrientalSails">
+      <column name="LockedId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <bag name="BookingRooms" inverse="true" cascade="all-delete-orphan">
+      <key column="BookId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.BookingRoom, Portal.Modules.OrientalSails"/>
+    </bag>
+    <bag name="Services" inverse="true" cascade="all-delete-orphan">
+      <key column="BookingId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.BookingService, Portal.Modules.OrientalSails"/>
+    </bag>
+    <bag name="Transactions" inverse="true" cascade="all-delete-orphan">
+      <key column="BookingId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.Transaction, Portal.Modules.OrientalSails"/>
+    </bag>
+    <bag name="ExtraServices" table="os_BookingExtra" cascade="all">
+      <key column="BookingId"/>
+      <many-to-many column="ExtraOptionId"
+			   class="Portal.Modules.OrientalSails.Domain.ExtraOption, Portal.Modules.OrientalSails"/>
+    </bag>
+    <bag name="BookingHistories" inverse ="true" batch-size="10" cascade="all-delete-orphan">
+      <key column="BookingId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.BookingHistory, Portal.Modules.OrientalSails"/>
+    </bag>
+    <property name="LockStatus"></property>
+  </class>
+</hibernate-mapping>

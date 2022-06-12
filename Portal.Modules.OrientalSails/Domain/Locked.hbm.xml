@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.Locked, Portal.Modules.OrientalSails" table="os_Locked">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+    <property name="Start" type="DateTime">
+      <column name="Start" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="End" type="DateTime">
+      <column name="`End`" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Description" type="string">
+      <column name="Description" sql-type="ntext" not-null="false"/>
+    </property>
+    <many-to-one name="Cruise" class="Portal.Modules.OrientalSails.Domain.Cruise, Portal.Modules.OrientalSails">
+      <column name="CruiseId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <one-to-one name="Charter" class="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails"/>
+  </class>
+</hibernate-mapping>

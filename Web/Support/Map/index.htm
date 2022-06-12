@@ -1,0 +1,128 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VIETNAM MAP
+</title>
+<style type="text/css">
+div
+{
+	display: inline;
+	background-image : url(transparent.gif);
+}
+#northwest .out
+{
+	background-image : url(northwest.jpg);	
+}
+
+#northeast .out
+{
+	background-image : url(northeast.jpg);
+}
+
+#hanoi .out
+{
+	background-image : url(hanoi.jpg);	
+}
+
+#northcentral .out
+{
+	background-image : url(northcentral.jpg);
+}
+
+#centralhighland .out
+{
+	background-image : url(centralhighland.jpg);
+}
+
+#southcentral .out
+{
+	background-image : url(southcentral.jpg);
+}
+
+#mekong .out
+{
+	background-image : url(mekong.jpg);
+}
+
+.hover
+{
+filter:alpha(opacity=50);
+opacity: 0.5;	
+background-color: red;
+}
+.out
+{
+background-color: transperent;
+}
+</style>
+
+<script type="text/javascript">
+      function OnMouseHover(element)
+      {      
+      	this.className = "hover";
+      }
+      
+      function OnMouseOut(element)
+      {
+      	this.className = "out";
+      }
+
+</script>
+</head>
+<body>
+<div>
+<img src="map.jpg" style="position: absolute; top:8px;left:8px;" alt='map'/>
+
+
+<div id="hanoi">
+<div style="position: absolute; top: 126px;left: 258px; z-index: 10; width: 62px; height: 25px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=5'">
+</div>
+</div>
+
+<div id="northwest">
+<div style="position: absolute; top: 11px;left: 97px; z-index: 1; width: 198px; height: 159px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=498'">
+</div>
+</div>
+
+<div id="northeast">
+<div style="position: absolute; top: 30px;left: 290px; z-index: 2; width: 169px; height: 147px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=4'">
+</div>
+</div>
+
+<div id="northcentral">
+<div style="position: absolute; top: 171px;left: 191px; z-index: 3; width: 180px; height: 177px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=499'">
+</div>
+</div>
+
+<div style="position: absolute; top: 353px;left: 312px; z-index: 2; width: 215px; height: 110px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=7'">
+</div>
+
+<div id="centralhighland">
+<div style="position: absolute; top: 467px;left: 377px; z-index: 5;width: 74px; height: 213px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=500'">
+</div>
+</div>
+
+<div id="southcentral">
+<div style="position: absolute; top: 469px;left: 422px; z-index: 4; width: 104px; height: 259px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=501'">
+</div>
+</div>
+
+<div style="position: absolute; top: 674px;left: 311px; z-index: 1; width: 148px; height: 90px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" onclick="parent.window.location='/9/section.aspx?LocationId=494'">
+</div>
+
+<div id="mekong">
+<div style="position: absolute; top: 700px;left: 187px; z-index: 4; width: 155px; height: 147px;"
+onmouseover="this.className='hover'" onmouseout="this.className='out'" class="out" onclick="parent.window.location='/9/section.aspx?LocationId=6'">
+</div>
+</div>
+
+</div>
+</body>
+</html>

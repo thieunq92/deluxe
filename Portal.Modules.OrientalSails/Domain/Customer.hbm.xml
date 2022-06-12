@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.Customer, Portal.Modules.OrientalSails" table="os_Customer">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+		<property name="Fullname" type="String">
+			<column name="Fullname" length="100" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Birthday" type="DateTime">
+			<column name="Birthday" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="Passport" type="String">
+			<column name="Passport" length="50" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Country" type="String">
+			<column name="Country" length="50" sql-type="nvarchar" not-null="false"/>
+		</property>
+    <property name="IsMale" type="Boolean">
+      <column name="IsMale" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="VisaNo" type="String">
+      <column name="VisaNo" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="VisaExpired" type="DateTime">
+      <column name="VisaExpired" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="IsChild" type="Boolean">
+      <column name="IsChild" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsVietKieu" type="Boolean">
+      <column name="IsVietKieu" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="Purpose" type="string">
+      <column name="Purpose" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="StayFrom" type="DateTime">
+      <column name="StayFrom" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="StayTo" type="DateTime">
+      <column name="StayTo" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="StayTerm" type="string">
+      <column name="StayTerm" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="StayIn" type="string">
+      <column name="StayIn" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Code" type="string">
+      <column name="Code" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Total" type="double">
+      <column name="Total" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Type" type="Portal.Modules.OrientalSails.Web.Util.CustomerType, Portal.Modules.OrientalSails">
+      <column name="Type" sql-type="int" not-null="false"/>
+    </property>
+    <many-to-one name="Nationality" class="Portal.Modules.OrientalSails.Domain.Nationality, Portal.Modules.OrientalSails">
+      <column name="NationalityId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="StayPurpose" class="Portal.Modules.OrientalSails.Domain.Purpose, Portal.Modules.OrientalSails">
+      <column name="PurposeId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>    
+		<many-to-one name="Booking" class="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails">
+			<column name="BookingId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+    <many-to-one name="BookingRoom" class="Portal.Modules.OrientalSails.Domain.BookingRoom, Portal.Modules.OrientalSails">
+      <column name="BookingRoomId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <bag name="CustomerExtraOptions" table="os_CustomerService" cascade="all" where="IsExcluded=0">
+      <key column="CustomerId"/>
+      <many-to-many column="ServiceId"
+			   class="Portal.Modules.OrientalSails.Domain.ExtraOption, Portal.Modules.OrientalSails"/>
+    </bag>
+	</class>
+</hibernate-mapping>

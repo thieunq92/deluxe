@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.SailExpensePayment, Portal.Modules.OrientalSails" table="os_ExpensePayment">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Booking__5FB337D6"/>
+			<generator class="native" />
+		</id>
+    <many-to-one name="Expense" class="Portal.Modules.OrientalSails.Domain.SailExpense, Portal.Modules.OrientalSails" unique="true">
+      <column name="ExpenseId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="Transfer" type="double">
+      <column name="Transfer" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Ticket" type="double">
+      <column name="Ticket" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Guide" type="double">
+      <column name="Guide" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Meal" type="double">
+      <column name="Meal" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Kayaing" type="double">
+      <column name="Kayaing" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Service" type="double">
+      <column name="ServiceSupplement" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Cruise" type="double">
+      <column name="Cruise" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Others" type="double">
+      <column name="Others" length="8" sql-type="money" not-null="false"/>
+    </property>
+	</class>
+</hibernate-mapping>

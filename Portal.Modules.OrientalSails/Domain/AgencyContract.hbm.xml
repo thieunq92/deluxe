@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.AgencyContract, Portal.Modules.OrientalSails" table="os_AgencyContract">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+    <property name="ContractName" type="String">
+      <column name="ContractName" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="ExpiredDate" type="DateTime">
+      <column name="ExpiredDate" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="ContractFile">
+      <column name="ContractFile" sql-type="varbinary" not-null="false"/>
+    </property>
+    <property name="FileName" type="String">
+      <column name="FileName" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="FilePath" type="String">
+      <column name="FilePath" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <many-to-one name="Agency" class="Portal.Modules.OrientalSails.Domain.Agency, Portal.Modules.OrientalSails">
+      <column name="AgencyId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="CreateDate" type="datetime">
+      <column name="CreateDate" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Received" type="Boolean">
+      <column name="Received" sql-type="bit" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

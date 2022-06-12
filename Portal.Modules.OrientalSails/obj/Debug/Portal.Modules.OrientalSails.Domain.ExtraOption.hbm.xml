@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.ExtraOption, Portal.Modules.OrientalSails" table="os_ExtraOption">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_os_ExtraOption"/>
+			<generator class="native" />
+		</id>
+		<property name="Name" type="String">
+			<column name="Name" length="250" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Price" type="double">
+			<column name="Price" length="8" sql-type="money" not-null="false"/>
+		</property>
+    <property name="Deleted" type="Boolean">
+      <column name="Deleted" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsIncluded" type="Boolean">
+      <column name="IsIncluded" sql-type="bit" not-null="false"/>
+    </property>
+		<property name="Description" type="String">
+			<column name="Description" length="500" sql-type="nvarchar" not-null="false"/>
+		</property>
+    <property name="Target" type="Portal.Modules.OrientalSails.Domain.ServiceTarget, Portal.Modules.OrientalSails">
+      <column name="Target" sql-type="int" not-null="false"/>
+    </property>
+    <!--<bag name="CustomerExtraOptions" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key column="ExtraOptionId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.CustomerExtraOption, Portal.Modules.OrientalSails"/>
+    </bag>-->
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAddAlbum" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnAddNew" xml:space="preserve">
+    <value>Add new</value>
+  </data>
+  <data name="btnAddNewRegion" xml:space="preserve">
+    <value>New region</value>
+  </data>
+  <data name="btnAddPrice" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnChooseAlbum" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnExport" xml:space="preserve">
+    <value>Export details</value>
+  </data>
+  <data name="btnRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="butonSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="buttonBoatConfig" xml:space="preserve">
+    <value>Boat</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="buttonHotelConfig" xml:space="preserve">
+    <value>Hotel</value>
+  </data>
+  <data name="buttonLandscapeConfig" xml:space="preserve">
+    <value>Entrance Fee</value>
+  </data>
+  <data name="buttonOverview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="buttonRestaurantConfig" xml:space="preserve">
+    <value>Restaurant</value>
+  </data>
+  <data name="buttonSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="buttonSubmit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="buttonTransportConfig" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>-- Choose City --</value>
+  </data>
+  <data name="ChooseCountry" xml:space="preserve">
+    <value>-- Choose Country --</value>
+  </data>
+  <data name="ChooseDistrict" xml:space="preserve">
+    <value>-- Choose District --</value>
+  </data>
+  <data name="ChooseRegion" xml:space="preserve">
+    <value>-- Choose Region --</value>
+  </data>
+  <data name="dropdownItemChooseArea" xml:space="preserve">
+    <value>-- Select region --</value>
+  </data>
+  <data name="dropdownItemChooseCity" xml:space="preserve">
+    <value>-- Select city --</value>
+  </data>
+  <data name="dropdownItemChooseCountry" xml:space="preserve">
+    <value>-- Select country --</value>
+  </data>
+  <data name="dropdownItemChooseDistrict" xml:space="preserve">
+    <value>-- Select district --</value>
+  </data>
+  <data name="hplCurrencies" xml:space="preserve">
+    <value>Exchange rates</value>
+  </data>
+  <data name="hplEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="hplLandscapeComment" xml:space="preserve">
+    <value>Admin comments</value>
+  </data>
+  <data name="hplRestaurantOrders" xml:space="preserve">
+    <value>Admin orders</value>
+  </data>
+  <data name="hplView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="hyperLinkAddGuideRate" xml:space="preserve">
+    <value>Add guide rates</value>
+  </data>
+  <data name="hyperLinkAddNewHotel" xml:space="preserve">
+    <value>Add Hotel</value>
+  </data>
+  <data name="hyperLinkAddNewLocation" xml:space="preserve">
+    <value>Add Location</value>
+  </data>
+  <data name="hyperLinkAdminComments" xml:space="preserve">
+    <value>Comments admin</value>
+  </data>
+  <data name="hyperLinkAdminOrders" xml:space="preserve">
+    <value>Admin orders</value>
+  </data>
+  <data name="hyperLinkAgentList" xml:space="preserve">
+    <value>Agency List</value>
+  </data>
+  <data name="hyperLinkBoatAdministrator" xml:space="preserve">
+    <value>Boat Administrator</value>
+  </data>
+  <data name="hyperLinkBoatCategories" xml:space="preserve">
+    <value>Categories management</value>
+  </data>
+  <data name="hyperLinkBoatEdit" xml:space="preserve">
+    <value>Add new boat</value>
+  </data>
+  <data name="hyperLinkBoatList" xml:space="preserve">
+    <value>Boat List</value>
+  </data>
+  <data name="hyperLinkBoatManagement" xml:space="preserve">
+    <value>Tour Boat Management</value>
+  </data>
+  <data name="hyperLinkBoatRoomTypes" xml:space="preserve">
+    <value>Room types configuration</value>
+  </data>
+  <data name="hyperLinkBoatTripTourEdit" xml:space="preserve">
+    <value>Add trip tour</value>
+  </data>
+  <data name="hyperLinkBoatTripTourList" xml:space="preserve">
+    <value>Trip tour list</value>
+  </data>
+  <data name="hyperLinkBoatTypes" xml:space="preserve">
+    <value>Boat types management</value>
+  </data>
+  <data name="hyperLinkCuisineEdit" xml:space="preserve">
+    <value>Cuisine Edit</value>
+  </data>
+  <data name="hyperLinkEntranceFeeTypes" xml:space="preserve">
+    <value>Entrance Fee Types</value>
+  </data>
+  <data name="hyperLinkGuideAdministrator" xml:space="preserve">
+    <value>Guide Administrator</value>
+  </data>
+  <data name="hyperLinkGuideEdit" xml:space="preserve">
+    <value>Add new guide</value>
+  </data>
+  <data name="hyperLinkGuideLanguagesSetting" xml:space="preserve">
+    <value>Languages setting</value>
+  </data>
+  <data name="hyperLinkGuideList" xml:space="preserve">
+    <value>Guide List</value>
+  </data>
+  <data name="hyperLinkGuideManagement" xml:space="preserve">
+    <value>Guide Management</value>
+  </data>
+  <data name="hyperLinkGuideRate" xml:space="preserve">
+    <value>Guide Rate</value>
+  </data>
+  <data name="hyperLinkGuideServices" xml:space="preserve">
+    <value>Guide Services</value>
+  </data>
+  <data name="HyperLinkHomePage" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="hyperLinkHotelList" xml:space="preserve">
+    <value>Hotel List</value>
+  </data>
+  <data name="hyperLinkHotelLogList" xml:space="preserve">
+    <value>Creator Administrator</value>
+  </data>
+  <data name="HyperLinkHotelManagement" xml:space="preserve">
+    <value>Hotel Management</value>
+  </data>
+  <data name="hyperLinkLandscapeEdit" xml:space="preserve">
+    <value>Add new destination</value>
+  </data>
+  <data name="hyperLinkLandscapeList" xml:space="preserve">
+    <value>Destination list</value>
+  </data>
+  <data name="hyperLinkLandscapeManagement" xml:space="preserve">
+    <value>Destination management</value>
+  </data>
+  <data name="hyperLinkLocationList" xml:space="preserve">
+    <value>Location List</value>
+  </data>
+  <data name="HyperLinkLocationManagement" xml:space="preserve">
+    <value>Location Management</value>
+  </data>
+  <data name="hyperLinkMealEdit" xml:space="preserve">
+    <value>Add new Typical dishes</value>
+  </data>
+  <data name="hyperLinkMealList" xml:space="preserve">
+    <value>Typical dishes list</value>
+  </data>
+  <data name="hyperLinkPriceList" xml:space="preserve">
+    <value>Price list</value>
+  </data>
+  <data name="HyperLinkPricingManagement" xml:space="preserve">
+    <value>Pricing Management</value>
+  </data>
+  <data name="hyperLinkProviderEdit" xml:space="preserve">
+    <value>Provider Edit</value>
+  </data>
+  <data name="hyperLinkProviderList" xml:space="preserve">
+    <value>Provider List</value>
+  </data>
+  <data name="hyperLinkRestaurantComments" xml:space="preserve">
+    <value>Admin comments</value>
+  </data>
+  <data name="hyperLinkRestaurantEdit" xml:space="preserve">
+    <value>Add new restaurant</value>
+  </data>
+  <data name="hyperLinkRestaurantList" xml:space="preserve">
+    <value>Restaurant List</value>
+  </data>
+  <data name="hyperLinkRestaurantManagement" xml:space="preserve">
+    <value>Restaurant Management</value>
+  </data>
+  <data name="hyperLinkRoomTypes" xml:space="preserve">
+    <value>Room types configurations</value>
+  </data>
+  <data name="hyperLinkRouteEdit" xml:space="preserve">
+    <value>Add new route</value>
+  </data>
+  <data name="hyperLinkRouteList" xml:space="preserve">
+    <value>Route list</value>
+  </data>
+  <data name="hyperLinkTourEdit" xml:space="preserve">
+    <value>Add new tour</value>
+  </data>
+  <data name="hyperLinkTourList" xml:space="preserve">
+    <value>Tours management</value>
+  </data>
+  <data name="hyperLinkTourRegions" xml:space="preserve">
+    <value>Tour regions</value>
+  </data>
+  <data name="hyperLinkTourTypes" xml:space="preserve">
+    <value>Tour types</value>
+  </data>
+  <data name="hyperLinkTransportEdit" xml:space="preserve">
+    <value>Add new Transport</value>
+  </data>
+  <data name="hyperLinkTransportList" xml:space="preserve">
+    <value>Transport List</value>
+  </data>
+  <data name="hyperLinkTransportLogList" xml:space="preserve">
+    <value>Creator Administrator</value>
+  </data>
+  <data name="hyperLinkTransportTypeSetting" xml:space="preserve">
+    <value>Transport Type Setting</value>
+  </data>
+  <data name="ibnDown" xml:space="preserve">
+    <value>Go in</value>
+  </data>
+  <data name="ibnUp" xml:space="preserve">
+    <value>Up one level</value>
+  </data>
+  <data name="LabelAbtractImage" xml:space="preserve">
+    <value>Abtract Image (150x115 recommened)</value>
+  </data>
+  <data name="labelAction" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="labelActivities" xml:space="preserve">
+    <value>Activities</value>
+  </data>
+  <data name="labelAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="labelAgencyPricing" xml:space="preserve">
+    <value>Agency Pricing</value>
+  </data>
+  <data name="labelAuthor" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="labelAuthorAccount" xml:space="preserve">
+    <value>User account</value>
+  </data>
+  <data name="labelCityEnd" xml:space="preserve">
+    <value>End In</value>
+  </data>
+  <data name="labelCityStart" xml:space="preserve">
+    <value>Start From</value>
+  </data>
+  <data name="labelCommentManagement" xml:space="preserve">
+    <value>Comment management</value>
+  </data>
+  <data name="labelContent" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="labelCurrencies" xml:space="preserve">
+    <value>Currency Settings</value>
+  </data>
+  <data name="labelDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="labelDetailsIniterary" xml:space="preserve">
+    <value>Details Initerary</value>
+  </data>
+  <data name="labelEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="labelEndIn" xml:space="preserve">
+    <value>End at</value>
+  </data>
+  <data name="labelExclusion" xml:space="preserve">
+    <value>Exclusion</value>
+  </data>
+  <data name="labelFax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="labelFeatured" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="labelFullName" xml:space="preserve">
+    <value>Fullname</value>
+  </data>
+  <data name="labelGrade" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="labelHotelManagement" xml:space="preserve">
+    <value>Hotel Management</value>
+  </data>
+  <data name="labelImage" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="labelInclusion" xml:space="preserve">
+    <value>Inclusion</value>
+  </data>
+  <data name="labelInContent" xml:space="preserve">
+    <value>Content contains</value>
+  </data>
+  <data name="labelIP" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="labelLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="labelLocationEdit" xml:space="preserve">
+    <value>Location Edit</value>
+  </data>
+  <data name="labelMap" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="labelMobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="labelModuleManagement" xml:space="preserve">
+    <value>Module Management</value>
+  </data>
+  <data name="LabelName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="labelNewCurrency" xml:space="preserve">
+    <value>New Currency</value>
+  </data>
+  <data name="labelNewTourRegion" xml:space="preserve">
+    <value>New tour region</value>
+  </data>
+  <data name="labelNewTourType" xml:space="preserve">
+    <value>New tour type</value>
+  </data>
+  <data name="labelNoteForOperator" xml:space="preserve">
+    <value>Note for Operator</value>
+  </data>
+  <data name="labelNoteForSale" xml:space="preserve">
+    <value>Note for Sale</value>
+  </data>
+  <data name="labelNumberOfDays" xml:space="preserve">
+    <value>Number of days</value>
+  </data>
+  <data name="labelOrderPriority" xml:space="preserve">
+    <value>Order priority</value>
+  </data>
+  <data name="labelParent" xml:space="preserve">
+    <value>Parent location</value>
+  </data>
+  <data name="labelPositionList" xml:space="preserve">
+    <value>Location List</value>
+  </data>
+  <data name="labelPosted" xml:space="preserve">
+    <value>Posted</value>
+  </data>
+  <data name="labelPostedUser" xml:space="preserve">
+    <value>Posted by</value>
+  </data>
+  <data name="labelProviderFeatured" xml:space="preserve">
+    <value>Point: {0}</value>
+  </data>
+  <data name="labelRegionName" xml:space="preserve">
+    <value>Region name</value>
+  </data>
+  <data name="labelRegisteredTime" xml:space="preserve">
+    <value>Registered date</value>
+  </data>
+  <data name="labelRole" xml:space="preserve">
+    <value>Role </value>
+  </data>
+  <data name="labelStartAt" xml:space="preserve">
+    <value>Start at</value>
+  </data>
+  <data name="labelSummary" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="labelTel" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="labelTour" xml:space="preserve">
+    <value>Tour</value>
+  </data>
+  <data name="labelTourConfiguration" xml:space="preserve">
+    <value>Tour configuration</value>
+  </data>
+  <data name="labelTourEdit" xml:space="preserve">
+    <value>Tour Information</value>
+  </data>
+  <data name="labelTourInstruction" xml:space="preserve">
+    <value>Tour Instruction</value>
+  </data>
+  <data name="labelTourList" xml:space="preserve">
+    <value>Tours Management</value>
+  </data>
+  <data name="labelTourRegion" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="labelTourRegions" xml:space="preserve">
+    <value>Tour regions</value>
+  </data>
+  <data name="labelTourType" xml:space="preserve">
+    <value>Tour Type</value>
+  </data>
+  <data name="labelTourTypeInformation" xml:space="preserve">
+    <value>Tour Type Information</value>
+  </data>
+  <data name="labelTourTypeManagement" xml:space="preserve">
+    <value>Tour Type Management</value>
+  </data>
+  <data name="labelTourTypeName" xml:space="preserve">
+    <value>Tour type</value>
+  </data>
+  <data name="labelTripHighLight" xml:space="preserve">
+    <value>Trip Highlight</value>
+  </data>
+  <data name="labelTripLength" xml:space="preserve">
+    <value>Trip length</value>
+  </data>
+  <data name="labelUpdateStatus" xml:space="preserve">
+    <value>Updated successful</value>
+  </data>
+  <data name="labelUserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="labelValidLocation" xml:space="preserve">
+    <value>You must choose Location</value>
+  </data>
+  <data name="labelWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="labelWhatToTake" xml:space="preserve">
+    <value>What to take</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblListOfUserIn" xml:space="preserve">
+    <value>List of users in role </value>
+  </data>
+  <data name="messageConfirmDeleteLocation" xml:space="preserve">
+    <value>Are you sure want to delete this location?</value>
+  </data>
+  <data name="messageErrorDontHaveRangeFor" xml:space="preserve">
+    <value>WARNING: You may have input wrong data. Can not apply for the value between {0} and {1}. There is no range to apply.</value>
+  </data>
+  <data name="messageErrorOneValueBelongToTwoRange" xml:space="preserve">
+    <value>WARNING: You may have input wrong data. Can not apply for the value between {1} and {0}. There is two range to apply.</value>
+  </data>
+  <data name="messageErrorTwoMaxValue" xml:space="preserve">
+    <value>WARNING: You may have input wrong data. There is two range without max value.</value>
+  </data>
+  <data name="messageGoBackToRoot" xml:space="preserve">
+    <value>(Return to root level)</value>
+  </data>
+  <data name="messageGoUpOneLevel" xml:space="preserve">
+    <value>(Return to {0})</value>
+  </data>
+  <data name="messageLocationListParent" xml:space="preserve">
+    <value>This is the list of location whose parent is {0}</value>
+  </data>
+  <data name="messageNotFoundAnyLocation" xml:space="preserve">
+    <value>No location found at this.</value>
+  </data>
+  <data name="PostedAfter" xml:space="preserve">
+    <value>Posted after</value>
+  </data>
+  <data name="PostedBefore" xml:space="preserve">
+    <value>Posted before</value>
+  </data>
+  <data name="RevImage" xml:space="preserve">
+    <value>This file type is not supported. Please contact Administrator.</value>
+  </data>
+  <data name="RfvName" xml:space="preserve">
+    <value>Name is required!</value>
+  </data>
+  <data name="stringFormatResult" xml:space="preserve">
+    <value>Found {0} result(s)</value>
+  </data>
+  <data name="stringFormatUserCount" xml:space="preserve">
+    <value>Total users: {0}</value>
+  </data>
+  <data name="textAccessDenied" xml:space="preserve">
+    <value>Access Denied: You don't have permission.</value>
+  </data>
+  <data name="textAgencyType" xml:space="preserve">
+    <value>Agency Type/Role</value>
+  </data>
+  <data name="textAndUp" xml:space="preserve">
+    <value>And go on</value>
+  </data>
+  <data name="textApply" xml:space="preserve">
+    <value>Apply with</value>
+  </data>
+  <data name="textCount" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="textFrom" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="textInclude" xml:space="preserve">
+    <value>Include </value>
+  </data>
+  <data name="textModifyDenied" xml:space="preserve">
+    <value>ACCESS DENIED: YOU DON'T HAVE PERMISSION TO MODIFY THIS</value>
+  </data>
+  <data name="textRoot" xml:space="preserve">
+    <value>-- Root --</value>
+  </data>
+  <data name="textTo" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="textUser" xml:space="preserve">
+    <value> users</value>
+  </data>
+  <data name="titleAdminAgencyEdit" xml:space="preserve">
+    <value>This pricing table will be apply for {0}</value>
+  </data>
+  <data name="titleAdminAgencyUserList" xml:space="preserve">
+    <value>List of users in role {0}</value>
+  </data>
+  <data name="titleAdminAgentList" xml:space="preserve">
+    <value>Agency List</value>
+  </data>
+  <data name="titleAdminCurrencies" xml:space="preserve">
+    <value>Currency Settings</value>
+  </data>
+  <data name="titleAdminPositionEdit" xml:space="preserve">
+    <value>Add new Location</value>
+  </data>
+  <data name="titleAdminPositionList" xml:space="preserve">
+    <value>Location List</value>
+  </data>
+  <data name="titleProviderEdit" xml:space="preserve">
+    <value>Add new Provider</value>
+  </data>
+  <data name="titleProviderList" xml:space="preserve">
+    <value>Provider List</value>
+  </data>
+</root>

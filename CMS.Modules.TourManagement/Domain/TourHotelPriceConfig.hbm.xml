@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.TourManagement.Domain.TourHotelPriceConfig, CMS.Modules.TourManagement" table="tmt_TourHotelPriceConfig">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_tmt_TourHotelConfig"/>
+			<generator class="native" />
+		</id>
+		<property name="TourId" type="Int32">
+			<column name="TourId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="HotelId" type="Int32">
+			<column name="HotelId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="RoomTypeId" type="Int32">
+			<column name="RoomTypeId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="RoomClassId" type="Int32">
+			<column name="RoomClassId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="RoomCapicity" type="Int32">
+			<column name="RoomCapicity" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="NetPrice" type="Decimal">
+			<column name="NetPrice" length="8" sql-type="money" not-null="false"/>
+		</property>
+		<property name="CurrencyId" type="Int32">
+			<column name="CurrencyId" length="4" sql-type="int" not-null="false"/>
+		</property>
+    <property name="DayFrom" type="Int32">
+      <column name="DayFrom" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="DayTo" type="Int32">
+      <column name="DayTo" length="4" sql-type="int" not-null="false"/>
+    </property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,388 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CMS.Modules.TourManagement.Web.Admin.Admin" %>
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Tour Management by B.I.T Corp</title>
+    <link type="text/css" href="/Modules/TourManagement/Admin/Css/tour.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/Modules/TourManagement/Admin/Css/asiana/theme.css" />
+    <link rel="stylesheet" type="text/css" href="/Modules/TourManagement/Admin/Css/asiana/style.css" />
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/ie-sucks.css" />
+    <![endif]-->
+    <link rel="shortcut icon" href="/favicon.gif" />
+    <script type="text/javascript">
+        var StyleFile = "theme" + document.cookie.charAt(6) + ".css";
+        document.writeln('<link rel="stylesheet" type="text/css" href="/Modules/TourManagement/Admin/Css/asiana/' + StyleFile + '">');
+    </script>
+    <script type="text/javascript">
+      function getElementsByClassName(classname, node) {
+      if(!node) node = document.getElementsByTagName("body")[0];
+      var a = [];
+      var re = new RegExp('\\b' + classname + '\\b');
+      var els = node.getElementsByTagName("*");
+      for(var i=0,j=els.length; i<j; i++)
+      if(re.test(els[i].className))a.push(els[i]);
+      return a;
+      }
+      
+      function box1hover(element)
+      {      
+      	this.className = "box1_hover";
+      }
+      
+      function box1out(element)
+      {
+      	this.className = "box1";
+      }
+      
+      function box2hover(element)
+      {
+      	this.className = "box2_hover";
+      }
+      
+      function box2out(element)
+      {
+      	this.className = "box2";
+      }      
+      
+      function setEvent()
+      {
+      	a =getElementsByClassName("box1",null);
+      	for (var i=0,j=a.length; i<j; i++)
+      	{
+      		a[i].onmouseover = box1hover;      		 
+      		a[i].onmouseout = box1out;
+      	}
+      	a =getElementsByClassName("box2",null);
+      	for (var i=0,j=a.length; i<j; i++)
+      	{
+      		a[i].onmouseover = box2hover;      		 
+      		a[i].onmouseout = box2out;
+      	}      	
+      }
+</script>    
+</head>
+<body onload="setEvent();">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="CommonScriptManager" runat="server">
+    </asp:ScriptManager>
+            <ajaxToolkit:AlwaysVisibleControlExtender ID="ace" runat="server"
+    TargetControlID="updateProcessHotel"         
+    VerticalSide="Middle"
+    HorizontalSide="Center"
+    ScrollEffectDuration=".1"/>
+        <asp:UpdateProgress ID="updateProcessHotel" runat="server" >
+        <ProgressTemplate>
+        <img src="/Images/loading.gif" alt="loading" />
+        </ProgressTemplate>
+        </asp:UpdateProgress>
+<div id="header">
+	<div id="headertitle"><asp:Label runat="server" ID="labelModuleManagement" Text="TOUR MANAGEMENT"></asp:Label></div>
+	<div id="styleswitcher">
+            <ul>
+                <li><a href="javascript: document.cookie='theme='; window.location.reload();" title="Default" id="defswitch">d</a></li>
+                <li><a href="javascript: document.cookie='theme=1'; window.location.reload();" title="Blue" id="blueswitch">b</a></li>
+                <li><a href="javascript: document.cookie='theme=2'; window.location.reload();" title="Green" id="greenswitch">g</a></li>
+                <li><a href="javascript: document.cookie='theme=3'; window.location.reload();" title="Brown" id="brownswitch">b</a></li>
+                <li><a href="javascript: document.cookie='theme=4'; window.location.reload();" title="Mix" id="mixswitch">m</a></li>
+                <li><a href="javascript: document.cookie='theme=5'; window.location.reload();" title="Mix" id="A1">m</a></li>
+            </ul>
+     </div>
+</div>
+
+<div id="topmenu">
+            	<ul>
+                	<li class="current"><a href="">Home</a></li>
+                    <li><a href="#">Hotel</a></li>
+                	<li><a href="">Restaurant</a></li>
+                    <li><a href="#">Guide</a></li>
+                    <li><a href="#">Transport</a></li>
+                    <li><a href="#">Lanscape</a></li>
+                    <li><a href="#">Tour</a></li>
+              </ul>
+</div>
+<div id="subheader">            	
+	[Node: <asp:label id="lblNode" runat="server"></asp:label>]
+	[Section: <asp:label id="lblSection" runat="server"></asp:label>]
+	[<asp:hyperlink id="hplBack" runat="server" NavigateUrl="~/">Return to site</asp:hyperlink>]
+</div>  
+    <div class="bit_container">
+        <div class="bit_admin_sidecontent" id="side_content">
+            <div class="title">
+                <asp:Label runat="server" ID="labelHotelManagement" Text="Restaurant Management"></asp:Label></div>
+
+            <div>
+                <div class="box1">
+                    <img alt="Category" src="/Admin/AdminModuleImages/category.gif" align="absmiddle" />  <asp:HyperLink ID="HyperLinkHomePage" runat="server"></asp:HyperLink>
+                 </div>
+            </div>
+            
+            <asp:Panel ID="panelLocation" runat="server">
+            <div>            
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/category.gif" align="absMiddle" />  <asp:HyperLink ID="HyperLinkLocationManagement" runat="server" Text="Quản lý địa điểm"></asp:HyperLink>          
+                </div>
+                <div>                    
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkAddNewLocation" runat="server" Text="Thêm địa điểm"></asp:HyperLink>
+                    </div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkLocationList" runat="server" Text="Danh sách địa điểm"></asp:HyperLink>
+                    </div>
+                    <asp:Panel ID="panelTour" runat="server" Visible="false">
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTourEdit" runat="server"></asp:HyperLink>
+                    </div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTourList" runat="server"></asp:HyperLink>
+                    </div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTourTypes" runat="server"></asp:HyperLink>
+                    </div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTourRegions" runat="server"></asp:HyperLink>
+                    </div>                    
+                    </asp:Panel>  
+                    <asp:Panel ID="panelProvider" runat="server" Visible="false" >
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkProviderEdit" runat="server" Text="Thêm địa điểm"></asp:HyperLink>
+                    </div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkProviderList" runat="server" Text="Danh sách địa điểm"></asp:HyperLink>
+                    </div>
+                    </asp:Panel>                                     
+                </div>
+                
+            </div>
+            </asp:Panel>
+            
+            <asp:Panel ID="panelHotel" runat="server" Visible="false">
+            <div>
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/Category.gif" align="absmiddle" />  <asp:HyperLink ID="HyperLinkHotelManagement" runat="server" >Quản lý khách sạn</asp:HyperLink>
+                </div>
+                <asp:Panel ID="PanelArticle" runat="server">                
+                <div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkAddNewHotel" runat="server" >Thêm khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkHotelList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                    <div id="panelHotelLogList" runat="server" visible="false">
+                        <div class="box2" >
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkHotelLogList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                        </div>
+                        <div class="box2" >
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkRoomTypes" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                        </div>                        
+                    </div>                    
+                </div>
+                </asp:Panel>
+            </div>  
+            </asp:Panel>
+            
+            <asp:Panel ID="panelLandscape" runat="server" Visible="false">
+            <div>
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/Category.gif" align="absmiddle" />  <asp:HyperLink ID="hyperLinkLandscapeManagement" runat="server" >Quản lý khách sạn</asp:HyperLink>
+                </div>
+                <asp:Panel ID="Panel4" runat="server">                
+                <div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkLandscapeEdit" runat="server" >Thêm khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkLandscapeList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkEntranceFeeTypes" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>                  
+                </div>
+                </asp:Panel>
+            </div>  
+            </asp:Panel>
+            
+            <asp:Panel ID="panelRestaurant" runat="server" Visible="false">
+            <div>
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/Category.gif" align="absmiddle" />  <asp:HyperLink ID="hyperLinkRestaurantManagement" runat="server" >Quản lý khách sạn</asp:HyperLink>
+                </div>
+                <asp:Panel ID="Panel3" runat="server">                
+                <div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkRestaurantEdit" runat="server" >Thêm khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkRestaurantList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                    
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkCuisineEdit" runat="server" >Cuisine Edit</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkMealEdit" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkMealList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                </div>
+                </asp:Panel>
+            </div>  
+            </asp:Panel>
+            
+            <asp:Panel ID="panelTransport" runat="server" Visible="false">
+            <div>
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/Category.gif" align="absmiddle" />  <asp:HyperLink ID="hyperLink1" runat="server" >Transport Management</asp:HyperLink>
+                </div>
+                <asp:Panel ID="Panel5" runat="server">                
+                <div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTransportEdit" runat="server" >Thêm khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTransportList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkRouteEdit" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkRouteList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>
+                    <div id="panelTransportLogList" runat="server" visible="false">
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTransportTypeSetting" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                    </div>                    
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkRouteCategories" runat="server" >Route categories</asp:HyperLink>
+                    </div>
+                        <div class="box2" >
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkTransportLogList" runat="server" >Danh sách khách sạn</asp:HyperLink>
+                        </div>               
+                    </div>                                 
+                </div>
+                </asp:Panel>
+            </div>  
+            </asp:Panel>
+            
+            <asp:Panel ID="panelTourGuide" runat="server" Visible="false">
+            <div>
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/Category.gif" align="absmiddle" />  <asp:HyperLink ID="hyperLinkGuideManagement" runat="server" >Quản lý guide</asp:HyperLink>
+                </div>
+                <asp:Panel ID="panelGuideOption" runat="server">                
+                <div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkGuideEdit" runat="server" >Thêm guide</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkGuideList" runat="server" >Danh sách guide</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkAddGuideRate" runat="server" ></asp:HyperLink>
+                    </div>                    
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkGuideRate" runat="server" >Giá đầu vào</asp:HyperLink>
+                    </div>                    
+                    <div id="panelGuideAdmin" runat="server" Visible = "false">
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkGuideServices" runat="server" >Dịch vụ</asp:HyperLink>
+                    </div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkGuideLanguagesSetting" runat="server" ></asp:HyperLink>
+                    </div>                                        
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkGuideAdministrator" runat="server" >Guide administrator</asp:HyperLink>
+                    </div>
+                    </div>
+                </div>
+                </asp:Panel>
+            </div>  
+            </asp:Panel>
+            
+            <asp:Panel ID="panelTourBoat" runat="server" Visible="false">
+            <div>
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/Category.gif" align="absmiddle" />  <asp:HyperLink ID="hyperLinkBoatManagement" runat="server" ></asp:HyperLink>
+                </div>
+                <asp:Panel ID="panelBoatOption" runat="server">                
+                <div>
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatEdit" runat="server" >Thêm guide</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatList" runat="server" >Danh sách guide</asp:HyperLink>
+                    </div>
+<%--                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatTripTourEdit" runat="server" >Danh sách guide</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatTripTourList" runat="server" >Danh sách guide</asp:HyperLink>
+                    </div>--%>
+                    <div id="panelBoatAdmin" runat="server" Visible = "false">
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatRoomTypes" runat="server" >Guide administrator</asp:HyperLink>
+                    </div>                    
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatAdministrator" runat="server" >Guide administrator</asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatTypes" runat="server" ></asp:HyperLink>
+                    </div>
+                    <div  class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkBoatCategories" runat="server" ></asp:HyperLink>
+                    </div>
+                    </div>
+                </div>
+                </asp:Panel>
+            </div>  
+            </asp:Panel>
+            
+            <asp:Panel ID="panelAgentList" runat="server">
+            <div>
+                <div class="box1">
+                <img alt="Category" src="/Admin/AdminModuleImages/Category.gif" align="absmiddle" />  <asp:HyperLink ID="HyperLinkPricingManagement" runat="server" Text="Quản lý bảng giá" ></asp:HyperLink>
+                </div>
+                <asp:Panel ID="Panel1" runat="server">
+                <div>                    
+                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkAgentList" runat="server" >Danh sách nhóm đại lý</asp:HyperLink>
+                    </div>
+<%--                    <div class="box2">
+                        <img alt="Subcategory" src="/Admin/AdminModuleImages/subcategory.gif" align="absMiddle" />  <asp:HyperLink ID="hyperLinkCurrencies" runat="server" ></asp:HyperLink>
+                    </div>--%>                    
+                </div>
+                </asp:Panel>
+            </div>
+            </asp:Panel>              
+             
+        </div>            
+        <div class="main_content">
+            <asp:UpdatePanel ID="updatePanelMessage" runat="server" UpdateMode="Always">
+            <ContentTemplate>
+            <div style="width:740px;" id="divMessage" runat="server" visible="false">
+                <asp:Label ID="labelMessage" runat="server"></asp:Label>
+            </div>
+            </ContentTemplate>
+            </asp:UpdatePanel>
+            <div style="width:779px;border:none;">
+                        <asp:ContentPlaceHolder ID="AdminContent" runat="server">
+                        </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+<div class="footer">
+    <span style="float: right; margin-top:30px;">
+    POWERED BY B.I.T
+    </span>
+    <img src="/Admin/AdminModuleImages/tree.gif" />
+    <br />
+</div>    
+    </form>
+</body>
+</html>

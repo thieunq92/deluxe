@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.TourManagement.Domain.Tour, CMS.Modules.TourManagement" table="tmt_Tour">
+		<id name="Id" type="Int32" unsaved-value="null">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_tmt_Tour"/>
+			<generator class="native" />
+		</id>
+		<property name="Deleted" type="Boolean">
+			<column name="Deleted" length="1" sql-type="bit" not-null="true"/>
+		</property>
+		<property name="CreatedBy" type="Int32">
+			<column name="CreatedBy" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="CreatedDate" type="DateTime">
+			<column name="CreatedDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="ModifiedBy" type="Int32">
+			<column name="ModifiedBy" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="ModifiedDate" type="DateTime">
+			<column name="ModifiedDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="Name" type="String">
+			<column name="Name" length="200" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="Description" type="String">
+			<column name="Description" length="16" sql-type="ntext" not-null="false"/>
+		</property>
+		<property name="Image" type="String">
+			<column name="Image" length="200" sql-type="nvarchar" not-null="false"/>
+		</property>
+		<property name="NumberOfDay" type="Int32">
+			<column name="NumberOfDay" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="Summary" type="String">
+			<column name="Summary" length="16" sql-type="ntext" not-null="false"/>
+		</property>
+    <property name="Activities" type="String">
+      <column name="Activities" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="Grade" type="Int32">
+      <column name="Grade" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="TripHighLight" type="String">
+      <column name="TripHighLight" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="DetailsIniterary" type="String">
+      <column name="DetailsIniterary" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="Inclusion" type="String">
+      <column name="Inclusion" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="Exclusion" type="String">
+      <column name="Exclusion" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="WhatToTake" type="String">
+      <column name="WhatToTake" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="TourInstruction" type="String">
+      <column name="TourInstruction" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="Map" type="String">
+      <column name="`Map`" length="200" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="AlbumId" type="Int32">
+      <column name="AlbumId" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Featured" type="Int32">
+      <column name="Featured" length="4" sql-type="int" not-null="false"/>
+    </property>    
+    <property name="NoteForOperator" type="String">
+      <column name="NoteForOperator" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="NoteForSale" type="String">
+      <column name="NoteForSale" length="16" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="CompanyId" type="Int32">
+      <column name="CompanyId" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PublicStatus" type="Int32">
+      <column name="PublicStatus" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="IsHalf" type="Boolean">
+      <column name="IsHalf" sql-type="bit" not-null="false"/>
+    </property>
+    
+    <many-to-one name="TourType" class="CMS.Modules.TourManagement.Domain.TourType, CMS.Modules.TourManagement">
+      <column name="TourType" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="StartFrom" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="StartFrom" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="EndIn" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="EndIn" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="CountryStart" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="CountryStart" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="RegionStart" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="RegionStart" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="CityStart" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="CityStart" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="CountryEnd" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="CountryEnd" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="RegionEnd" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="RegionEnd" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="CityEnd" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="CityEnd" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="TourRegion" class="CMS.Modules.TourManagement.Domain.TourRegion, CMS.Modules.TourManagement" lazy="false">
+      <column name="TourRegionId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Provider" class="CMS.Modules.TourManagement.Domain.Provider, CMS.Modules.TourManagement" lazy="false">
+      <column name="ProviderId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="PackageStatus" type="CMS.Modules.TourManagement.Domain.PackageStatusClass, CMS.Modules.TourManagement">
+      <column name="PackageStatus" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <bag name="Comments" inverse="false" lazy="true">
+      <key column="TourId"/>
+      <one-to-many class="CMS.Modules.TourManagement.Domain.TourComment, CMS.Modules.TourManagement"/>
+    </bag>    
+  </class>
+</hibernate-mapping>

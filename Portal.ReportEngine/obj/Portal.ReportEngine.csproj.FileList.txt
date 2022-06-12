@@ -1,0 +1,6 @@
+bin\Debug\Portal.ReportEngine.dll
+bin\Debug\Portal.ReportEngine.pdb
+bin\Debug\itextsharp.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Portal.ReportEngine.dll
+obj\Debug\Portal.ReportEngine.pdb

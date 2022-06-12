@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Portal.Modules.OrientalSails"
+                   namespace="Portal.Modules.OrientalSails.Domain">
+  <class name="Agency" table="os_Agency" batch-size="10">
+    <cache usage="read-write"/>
+    <id name="Id">
+      <generator class="native" />
+    </id>
+    <property name="Name"/>
+    <property name="Phone"/>
+    <property name="Address"/>
+    <many-to-one name="Role" class="CMS.Core.Domain.Role, CMS.Core">
+      <column name="RoleId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Sale" class="CMS.Core.Domain.User, CMS.Core">
+      <column name="SaleId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="CreatedBy" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="CreatedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="ModifiedBy" class="CMS.Core.Domain.User, CMS.Core" not-found="ignore">
+      <column name="ModifiedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Organization" class="Portal.Modules.OrientalSails.Domain.Organization, Portal.Modules.OrientalSails">
+      <column name="OrgId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <bag name="Users" table="os_AgencyUser">
+      <key column="AgencyId"/>
+      <many-to-many column="UserId"
+			   class="CMS.Core.Domain.User, CMS.Core"/>
+    </bag>
+    <property name="Fax"/>
+    <property name="TaxCode"/>
+    <property name="Email"/>
+    <property name="ContractStatus"/>
+    <property name="Description"/>
+    <property name="Contract"/>
+    <property name="Accountant"/>
+    <property name="PaymentPeriod" type="Portal.Modules.OrientalSails.Domain.PaymentPeriodClass, Portal.Modules.OrientalSails">
+      <column name="PaymentPeriod" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="CreatedDate"/>
+    <property name="ModifiedDate"/>
+    <property name="Deleted"/>
+    <bag name="Bookings" inverse="true" cascade="all-delete-orphan">
+      <key column="AgencyId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails"/>
+    </bag>
+    <many-to-one name="AgencyLevel" class="Portal.Modules.OrientalSails.Domain.AgencyLevel, Portal.Modules.OrientalSails">
+      <column name="AgencyLevelId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

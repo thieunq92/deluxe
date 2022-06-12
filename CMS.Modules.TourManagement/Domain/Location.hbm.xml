@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" table="tm_Location">
+		<id name="Id" type="Int32" unsaved-value="null">
+			<column name="LocationId" length="4" sql-type="int" not-null="true" unique="true" index="PK_Location"/>
+			<generator class="native" />
+		</id>
+		<property name="Name" type="String">
+			<column name="Name" length="50" sql-type="nvarchar" not-null="true"/>
+		</property>
+    <many-to-one name="Parent" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement">
+      <column name="ParentId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+		<property name="Level" type="Int32">
+			<column name="`Level`" length="4" sql-type="int" not-null="true"/>
+		</property>
+		<property name="Description" type="String">
+			<column name="Description" length="16" sql-type="ntext" not-null="true"/>
+		</property>    
+		<property name="LanguageKey" type="String">
+			<column name="LanguageKey" length="5" sql-type="nvarchar" not-null="true"/>
+		</property>
+    <property name="Image" type="String">
+      <column name="Image" length="250" sql-type="nvarchar" not-null="true"/>
+    </property>
+    <property name="Order" type="Int32">
+      <column name="`Order`" length="4" sql-type="int" not-null="true"/>
+    </property>
+    <property name="HotelImage" type="String">
+      <column name="HotelImage" length="250" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="RestaurantImage" type="String">
+      <column name="RestaurantImage" length="250" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="DestinationImage" type="String">
+      <column name="DestinationImage" length="250" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <many-to-one name="Album" class="CMS.Modules.Gallery.Domain.Album, CMS.Modules.Gallery">
+      <column name="AlbumId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <bag name="Children" inverse="true" lazy="true" order-by="`Order` asc">
+      <key column="ParentId"/>
+      <one-to-many class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement"/>
+    </bag>
+	</class>
+</hibernate-mapping>

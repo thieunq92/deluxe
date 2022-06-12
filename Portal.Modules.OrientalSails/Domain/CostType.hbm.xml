@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.CostType, Portal.Modules.OrientalSails" table="os_CostType">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+    <property name="Name" type="String">
+      <column name="Name" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="IsDailyInput" type="Boolean">
+      <column name="IsDailyInput" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsCustomType" type="Boolean">
+      <column name="IsCustomType" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsSupplier" type="Boolean">
+      <column name="IsSupplier" sql-type="bit" not-null="false"/>
+    </property>
+    <many-to-one name="DefaultAgency" class="Portal.Modules.OrientalSails.Domain.Agency, Portal.Modules.OrientalSails">
+      <column name="DefaultAgencyId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Service" class="Portal.Modules.OrientalSails.Domain.ExtraOption, Portal.Modules.OrientalSails">
+      <column name="ExtraServiceId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="IsMonthly" type="Boolean">
+      <column name="IsMonthly" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsYearly" type="Boolean">
+      <column name="IsYearly" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsDaily" type="Boolean">
+      <column name="IsDaily" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="IsPayNow" type="Boolean">
+      <column name="IsPayNow" sql-type="bit" not-null="false"/>
+    </property>
+    <property name="GroupName" type="String">
+      <column name="GroupName" sql-type="nvarchar" not-null="false"/>
+    </property>
+	</class>
+</hibernate-mapping>

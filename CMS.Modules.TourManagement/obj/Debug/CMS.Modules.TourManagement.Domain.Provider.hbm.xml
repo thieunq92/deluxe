@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="CMS.Modules.TourManagement.Domain.Provider, CMS.Modules.TourManagement" table="tm_Provider">
+    <id name="Id" type="Int32" unsaved-value="null">
+      <column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_tmb_BoatCompany"/>
+      <generator class="native" />
+    </id>
+    <property name="Deleted" type="Boolean">
+      <column name="Deleted" length="1" sql-type="bit" not-null="true"/>
+    </property>
+    <property name="CreatedDate" type="DateTime">
+      <column name="CreatedDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="CreatedBy" type="Int32">
+      <column name="CreatedBy" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ModifiedDate" type="DateTime">
+      <column name="ModifiedDate" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="ModifiedBy" type="Int32">
+      <column name="ModifiedBy" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Name" type="String">
+      <column name="Name" length="200" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Address" type="String">
+      <column name="Address" length="1000" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <many-to-one name="Location" class="CMS.Modules.TourManagement.Domain.Location, CMS.Modules.TourManagement" lazy="false">
+      <column name="Location" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <property name="Website" type="String">
+      <column name="Website" length="50" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Tel" type="String">
+      <column name="Tel" length="50" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Fax" type="String">
+      <column name="Fax" length="50" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Mobile" type="String">
+      <column name="Mobile" length="50" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Description" type="String">
+      <column name="Description" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="Map" type="String">
+      <column name="`Map`" length="200" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Image" type="String">
+      <column name="Image" length="200" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="IsFeatured" type="Int32">
+      <column name="IsFeatured" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="CompanyId" type="Int32">
+      <column name="CompanyId" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ProviderType" type="CMS.Modules.TourManagement.Domain.ProviderTypeClass, CMS.Modules.TourManagement">
+      <column name="ProviderType" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <bag name="Categories">
+      <key column="ProviderId"/>
+      <one-to-many class="CMS.Modules.TourManagement.Domain.Provider_Category, CMS.Modules.TourManagement"/>
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.TourManagement.Domain.TourTransportSalePrice, CMS.Modules.TourManagement" table="tmt_TourTransportSalePrice">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true"/>
+			<generator class="native" />
+		</id>
+		<property name="RoleId" type="Int32">
+			<column name="RoleId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="NumberOfCustomers" type="Int32">
+			<column name="NumberOfCustomers" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="TourTransportId" type="Int32">
+			<column name="TourTransportId" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="TotalNetPrice" type="Decimal">
+			<column name="TotalNetPrice" length="8" sql-type="money" not-null="false"/>
+		</property>
+		<property name="TotalSalePrice" type="Decimal">
+			<column name="TotalSalePrice" length="8" sql-type="money" not-null="false"/>
+		</property>
+		<property name="LastCalculated" type="DateTime">
+			<column name="LastCalculated" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+	</class>
+</hibernate-mapping>

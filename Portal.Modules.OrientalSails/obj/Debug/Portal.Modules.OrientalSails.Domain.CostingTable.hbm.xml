@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.CostingTable, Portal.Modules.OrientalSails" table="os_CostingTable">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+    <property name="ValidFrom" type="DateTime">
+      <column name="ValidFrom" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="ValidTo" type="DateTime">
+      <column name="ValidTo" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Option" type="Portal.Modules.OrientalSails.Web.Util.TripOption, Portal.Modules.OrientalSails">
+      <column name="TripOption" length="4" sql-type="int" not-null="false"/>
+    </property>
+    <many-to-one name="Trip" class="Portal.Modules.OrientalSails.Domain.SailsTrip, Portal.Modules.OrientalSails">
+      <column name="TripId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <bag name="Costs" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key column="TableId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.Costing, Portal.Modules.OrientalSails"/>
+    </bag>
+	</class>
+</hibernate-mapping>

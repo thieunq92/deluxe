@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.SailsPriceConfig, Portal.Modules.OrientalSails" table="os_SailsPriceConfig">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_SailsPriceCon__7F2BE32F"/>
+			<generator class="native" />
+		</id>
+		<property name="TripOption" type="Portal.Modules.OrientalSails.Web.Util.TripOption, Portal.Modules.OrientalSails">
+			<column name="TripOption" length="4" sql-type="int" not-null="false"/>
+		</property>
+		<property name="NetPrice" type="double">
+			<column name="NetPrice" length="8" sql-type="money" not-null="false"/>
+		</property>
+		<property name="SpecialPrice" type="Double">
+			<column name="SpecialPrice" length="8" sql-type="money" not-null="false"/>
+		</property>
+		<many-to-one name="RoomClass" class="Portal.Modules.OrientalSails.Domain.RoomClass, Portal.Modules.OrientalSails">
+			<column name="RoomClassId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="RoomType" class="Portal.Modules.OrientalSails.Domain.RoomTypex, Portal.Modules.OrientalSails">
+			<column name="RoomTypeId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="Trip" class="Portal.Modules.OrientalSails.Domain.SailsTrip, Portal.Modules.OrientalSails">
+			<column name="TripId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+    <many-to-one name="Table" class="Portal.Modules.OrientalSails.Domain.SailsPriceTable, Portal.Modules.OrientalSails">
+      <column name="PriceTableId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>    
+	</class>
+</hibernate-mapping>

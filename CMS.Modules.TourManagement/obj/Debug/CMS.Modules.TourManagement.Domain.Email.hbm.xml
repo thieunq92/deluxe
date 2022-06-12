@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.TourManagement.Domain.Email, CMS.Modules.TourManagement" table="tm_Email">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="EmailId" length="4" sql-type="int" not-null="true" unique="true" index="PK_tm_Email"/>
+			<generator class="native" />
+		</id>
+		<property name="Name" type="String">
+			<column name="Name" length="50" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="Address" type="String">
+			<column name="Address" length="200" sql-type="nvarchar" not-null="true"/>
+		</property>
+		<property name="OwnerId" type="Int32">
+			<column name="OwnerId" length="4" sql-type="int" not-null="true"/>
+		</property>
+    <property name="OwnerType" type="String">
+      <column name="OwnerType" length="200" sql-type="nvarchar" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

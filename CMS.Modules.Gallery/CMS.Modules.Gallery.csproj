@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9BB3C77-A644-4353-BAEA-33D7E23B774D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CMS.Modules.Gallery</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CMS.Modules.Gallery</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.20821, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\lib\net35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.AutoTx">
+      <HintPath>..\lib\net35\Castle.Facilities.AutoTx.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.NHibernateIntegration">
+      <HintPath>..\lib\net35\Castle.Facilities.NHibernateIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Transaction">
+      <HintPath>..\lib\net35\Castle.Services.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\net35\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.5.2912.21007, Culture=neutral, PublicKeyToken=4f86767c9b519a06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <Name>log4net</Name>
+      <HintPath>..\lib\net35\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\lib\net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\lib\net35\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Caches.SysCache">
+      <HintPath>..\lib\net35\NHibernate.Caches.SysCache.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Album.cs" />
+    <Compile Include="Domain\AlbumService.cs" />
+    <Compile Include="Domain\AlbumSettings.cs" />
+    <Compile Include="Domain\AlbumlComment.cs" />
+    <Compile Include="Domain\Photo.cs" />
+    <Compile Include="Domain\PhotoService.cs" />
+    <Compile Include="Utils\GalleryPathBuilder.cs" />
+    <Compile Include="GallerySidebarModule.cs" />
+    <Compile Include="Web\AlbumSelector.ascx.cs">
+      <DependentUpon>AlbumSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\AlbumSelector.ascx.designer.cs">
+      <DependentUpon>AlbumSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\AlbumSelector.aspx.cs">
+      <DependentUpon>AlbumSelector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\AlbumSelector.aspx.designer.cs">
+      <DependentUpon>AlbumSelector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\AlbumSelectorPage.aspx.cs">
+      <DependentUpon>AlbumSelectorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\AlbumSelectorPage.aspx.designer.cs">
+      <DependentUpon>AlbumSelectorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Resources\Strings.nl.Designer.cs">
+      <DependentUpon>Strings.nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Web\Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ImageResizeUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GalleryModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\AdminGallery.aspx.cs">
+      <DependentUpon>AdminGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Albums.ascx.cs">
+      <DependentUpon>Albums.ascx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\SimpleViewer.ascx.cs">
+      <DependentUpon>SimpleViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\SimpleViewer.ascx.designer.cs">
+      <DependentUpon>SimpleViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\UI\BaseGalleryControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\AdminAlbum.aspx.cs">
+      <DependentUpon>AdminAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\AdminPhoto.aspx.cs">
+      <DependentUpon>AdminPhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\AdminPhotos.aspx.cs">
+      <DependentUpon>AdminPhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Photos.ascx.cs">
+      <DependentUpon>Photos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <None Include="Install\Database\mssql2000\install.sql" />
+    <None Include="Install\Database\mssql2000\uninstall.sql" />
+    <EmbeddedResource Include="Domain\Album.hbm.xml" />
+    <EmbeddedResource Include="Domain\Photo.hbm.xml" />
+    <EmbeddedResource Include="Web\Resources\Strings.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.nl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Resources\Strings.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Domain\AlbumlComment.hbm.xml" />
+    <Content Include="Web\AdminGallery.aspx" />
+    <Content Include="Web\Albums.ascx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web\AdminAlbum.aspx" />
+    <Content Include="Web\AdminPhoto.aspx" />
+    <Content Include="Web\AdminPhotos.aspx" />
+    <Content Include="Web\AlbumSelector.ascx" />
+    <Content Include="Web\AlbumSelector.aspx" />
+    <Content Include="Web\AlbumSelectorPage.aspx" />
+    <Content Include="Web\images\photogallery\album-bstretch.gif" />
+    <Content Include="Web\images\photogallery\album-l1.gif" />
+    <Content Include="Web\images\photogallery\album-l2.gif" />
+    <Content Include="Web\images\photogallery\album-l3.gif" />
+    <Content Include="Web\images\photogallery\album-l4.gif" />
+    <Content Include="Web\images\photogallery\album-lstretch.gif" />
+    <Content Include="Web\images\photogallery\album-mbl.gif" />
+    <Content Include="Web\images\photogallery\album-mbr.gif" />
+    <Content Include="Web\images\photogallery\album-mtl.gif" />
+    <Content Include="Web\images\photogallery\album-mtr.gif" />
+    <Content Include="Web\images\photogallery\album-r1.gif" />
+    <Content Include="Web\images\photogallery\album-r2.gif" />
+    <Content Include="Web\images\photogallery\album-r3.gif" />
+    <Content Include="Web\images\photogallery\album-r4.gif" />
+    <Content Include="Web\images\photogallery\album-rstretch.gif" />
+    <Content Include="Web\images\photogallery\album-tstretch.gif" />
+    <Content Include="Web\images\photogallery\button-first.gif" />
+    <Content Include="Web\images\photogallery\button-gallery.gif" />
+    <Content Include="Web\images\photogallery\button-last.gif" />
+    <Content Include="Web\images\photogallery\button-next.gif" />
+    <Content Include="Web\images\photogallery\button-prev.gif" />
+    <Content Include="Web\images\photogallery\content-shim-stretch.gif" />
+    <Content Include="Web\images\photogallery\frame-bot--x.gif" />
+    <Content Include="Web\images\photogallery\frame-bot-x-.gif" />
+    <Content Include="Web\images\photogallery\frame-botx--.gif" />
+    <Content Include="Web\images\photogallery\frame-mid--x.gif" />
+    <Content Include="Web\images\photogallery\frame-midx--.gif" />
+    <Content Include="Web\images\photogallery\frame-top--x.gif" />
+    <Content Include="Web\images\photogallery\frame-top-x-.gif" />
+    <Content Include="Web\images\photogallery\frame-topx--.gif" />
+    <Content Include="Web\images\photogallery\photonav-bg.gif" />
+    <Content Include="Web\images\photogallery\photonav-top-bg.gif" />
+    <Content Include="Web\images\photogallery\spacer.gif" />
+    <Content Include="Web\Photos.ascx" />
+    <Content Include="Web\SimpleViewer.ascx" />
+    <Content Include="Web\View.ascx" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\CMS.Core.csproj">
+      <Project>{723B7D30-6472-4B96-8D09-4F094C96650E}</Project>
+      <Name>CMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Web.Extensions\CMS.Web.Extensions.csproj">
+      <Project>{5AB6EF41-3371-4A1E-9061-B5F3DFD3964A}</Project>
+      <Name>CMS.Web.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerControls\CMS.ServerControls.csproj">
+      <Project>{C64DAA00-AAB1-4AC7-ADE2-119B53B9666A}</Project>
+      <Name>CMS.ServerControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web\CMS.Web.csproj">
+      <Project>{DD158F08-6E8F-4234-B3F6-A5402C8E34CC}</Project>
+      <Name>CMS.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sidebar\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>xcopy /s /y "$(ProjectDir)"Web\*.as?x "$(SolutionDir)"Web\Modules\Gallery\
+xcopy /s /y "$(ProjectDir)"Web\*.css "$(SolutionDir)"Web\Modules\Gallery\
+xcopy /s /y "$(ProjectDir)"Web\images\photogallery\*.gif "$(SolutionDir)"Web\Modules\Gallery\images\photogallery\
+xcopy /s /y "$(ProjectDir)"Sidebar\*.as?x "$(SolutionDir)"Web\Modules\Gallery\
+xcopy /s /y "$(ProjectDir)"Sidebar\*.css "$(SolutionDir)"Web\Modules\Gallery\
+xcopy /s /y "$(ProjectDir)"Install\Database\*.sql "$(SolutionDir)"Web\Modules\Gallery\Install\Database\
+xcopy /s /y "$(TargetDir)"CMS.Modules.Gallery*.dll "$(SolutionDir)"Web\bin\</PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3348</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+</Project>

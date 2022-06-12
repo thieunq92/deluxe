@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.Gallery.Domain.Photo, CMS.Modules.Gallery" table="cm_galleryphoto">
+		<id name="Id" column="photoid" type="Int32" unsaved-value="-1">
+			<generator class="native">
+				<param name="sequence">cm_galleryphoto_photoid_seq</param>
+			</generator>
+		</id>
+		<timestamp name="DateModified" column="updatetimestamp" />
+
+		<property name="FileName" column="filepath" type="String" length="255" />
+		<property name="Size" column="filesize" type="Int32" />
+		<property name="NrOfViews" column="nrofviews" type="Int32" />
+		<property name="Title" column="title" type="String" length="100" />
+		<property name="DateCreated" column="inserttimestamp" type="DateTime" />
+
+		<property name="ImageWidth" column="imagewidth" type="Int32" />
+		<property name="ImageHeight" column="imageheight" type="Int32" />
+		<property name="ThumbWidth" column="thumbwidth" type="Int32" />
+		<property name="ThumbHeight" column="thumbheight" type="Int32" />
+		<property name="Rating" column="rating" type="Single" />
+    <property name="Order" column="`Order`" type="Int32" />
+
+		<many-to-one name="Section" class="CMS.Core.Domain.Section, CMS.Core" column="sectionid" cascade="none" />
+		<many-to-one name="CreatedBy" class="CMS.Core.Domain.User, CMS.Core" column="createdby" cascade="none" lazy="false" />
+		<many-to-one name="ModifiedBy" class="CMS.Core.Domain.User, CMS.Core" column="modifiedby" cascade="none" lazy="false" />
+		
+		<many-to-one name="Album" class="CMS.Modules.Gallery.Domain.Album, CMS.Modules.Gallery" column="albumid" outer-join="true" cascade="none" />
+	</class>
+</hibernate-mapping>

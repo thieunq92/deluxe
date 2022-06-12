@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.BookingServicePrice, Portal.Modules.OrientalSails" table="os_BookingServicePrice">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_os_CustomerExtraOption"/>
+			<generator class="native" />
+		</id>
+		<many-to-one name="Booking" class="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails">
+			<column name="BookingId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="ExtraOption" class="Portal.Modules.OrientalSails.Domain.ExtraOption, Portal.Modules.OrientalSails">
+			<column name="ServiceId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+    <property name="UnitPrice" type="double">
+      <column name="UnitPrice" sql-type="money" not-null="false"/>
+    </property>
+	</class>
+</hibernate-mapping>

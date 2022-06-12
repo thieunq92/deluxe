@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.BookingRoom, Portal.Modules.OrientalSails" table="os_BookingRoom">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_BookingRoom__71D1E811"/>
+			<generator class="native" />
+		</id>
+		<many-to-one name="Book" class="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails">
+			<column name="BookId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="Room" class="Portal.Modules.OrientalSails.Domain.Room, Portal.Modules.OrientalSails">
+			<column name="RoomId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="RoomClass" class="Portal.Modules.OrientalSails.Domain.RoomClass, Portal.Modules.OrientalSails">
+			<column name="RoomClassId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="RoomType" class="Portal.Modules.OrientalSails.Domain.RoomTypex, Portal.Modules.OrientalSails">
+			<column name="RoomTypeId" length="4" sql-type="int" not-null="false"/>
+		</many-to-one>
+    <property name="BookingType" type="Portal.Modules.OrientalSails.Domain.BookingTypeClass, Portal.Modules.OrientalSails">
+      <column name="BookingType" length="50" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="HasChild" type="Boolean">
+      <column name="HasChild" length="1" sql-type="bit" not-null="true"/>
+    </property>
+    <property name="HasBaby" type="Boolean">
+      <column name="HasBaby" length="1" sql-type="bit" not-null="true"/>
+    </property>
+    <property name="IsSingle" type="Boolean">
+      <column name="IsSingle" length="1" sql-type="bit" not-null="true"/>
+    </property>
+    <property name="Total" type="Double">
+      <column name="Total" length="1" sql-type="money" not-null="true"/>
+    </property>
+    <property name="TourComment" type="string">
+      <column name="TourComment" length="1" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="RoomComment" type="string">
+      <column name="RoomComment" length="1" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="FoodComment" type="string">
+      <column name="FoodComment" length="1" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="StaffComment" type="string">
+      <column name="StaffComment" length="1" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="GuideComment" type="string">
+      <column name="GuideComment" length="1" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="CustomerIdea" type="string">
+      <column name="CustomerIdea" length="1" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <bag name="Customers" inverse="true" cascade="all-delete-orphan" where="type!=4">
+      <key column="BookingRoomId"/>
+      <one-to-many class="Portal.Modules.OrientalSails.Domain.Customer, Portal.Modules.OrientalSails"/>
+    </bag>
+	</class>
+</hibernate-mapping>

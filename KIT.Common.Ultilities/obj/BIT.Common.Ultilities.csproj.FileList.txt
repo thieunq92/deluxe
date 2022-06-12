@@ -1,0 +1,5 @@
+bin\Debug\KIT.Common.Ultilities.dll
+bin\Debug\KIT.Common.Ultilities.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\KIT.Common.Ultilities.dll
+obj\Debug\KIT.Common.Ultilities.pdb

@@ -1,0 +1,1 @@
+Dear {0},<br/>We are pleased to confirm your booking as below:<br/>Booking ID: {1}<br/>Partner: {2}<br/>Start date: {3:dd/MM/yyyy}<br/>Number of pax: {4}<br/>Customer name:<br/> {5}<br/>Service: {6}<br/>{7}<br/>Room type:{8}<br/>Confirm by {9}<br/> Thank you very much for your supports,

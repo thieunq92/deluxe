@@ -1,0 +1,454 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainAgency.Master.cs" Inherits="Portal.Modules.OrientalSails.Web.Admin.MainAgency" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="/favicon.gif" />
+    <link rel="stylesheet" type="text/css" href="/css/normalize/v5.0.0/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap/v3.3.7/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/datetimepicker/v2.5.4/jquery.datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mo/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mo/main1.css" />
+    <link rel="stylesheet" type="text/css" href="/css/colorbox/v1.6.4/colorbox.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mo/non-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/css/datatable/v1.10.16/datatables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/v5.9.0/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jqueryui/v1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jqueryconfirm/v3.3.0/jquery-confirm.css" />
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = 0;
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        }
+    </script>
+</head>
+<body class="sneak" style="position: relative">
+    <form id="form1" runat="server" enctype="multipart/form-data" ng-app="myApp" style="height: inherit">
+        <asp:ScriptManager ID="CommonScriptManager" runat="server" AsyncPostBackTimeout="120" EnablePartialRendering="true">
+        </asp:ScriptManager>
+        <asp:UpdateProgress ID="updateProcessAdmin" runat="server">
+            <ProgressTemplate>
+                <div id="overlay-wholepage">
+                    <div id="image">
+                        <img src="/Images/loading.gif" alt="loading" />
+                    </div>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <div class="container-fluid container__body --no-padding-leftright">
+            <div class="row site-header">
+                <div class="wrapper wrapper__header">
+                    <div class="col-xs-2 site-name --no-padding-leftright">
+                        <a href="#">Atravelmate Co. Ltd.</a>
+                    </div>
+                    <div class="col-xs-10 right-container --no-padding-leftright">
+                        <%--<div class="input-group search-box">
+                            <span class="input-group-addon" id="basic-addon1"><i class="fas fa-search"></i></span>
+                            <input name="search" class="form-control" placeholder="Search" autocomplete="off" />
+                        </div>--%>
+                        <div class="dropdown">
+                            <button class="btn-avartar dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <img src="/Images/no_image.gif" class="avartar" />
+                                <span class="fas fa-angle-down"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                <li>
+                                    <asp:HyperLink ID="hlUserPanel" runat="server">Profile</asp:HyperLink></li>
+                                <li>
+                                    <asp:LinkButton ID="lbLogout" runat="server" OnClick="lbLogOut_Click">Log Out</asp:LinkButton></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-default">
+                <div class="wrapper wrapper__menu">
+                    <div id="navbar">
+                        <ul class="nav navbar-nav col-xs-12">
+                          <%--  <li><a href="/Modules/Sails/Admin/Home.aspx?NodeId=1&SectionId=15">Home</a></li>--%>
+                            <li class="dropdown" id="tabBooking" runat="server">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Booking <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li id="pAddBooking" runat="server">
+                                        <asp:HyperLink ID="hlAddBooking" runat="server">Add Booking</asp:HyperLink></li>
+                                    <li id="pBookingList" runat="server">
+                                        <asp:HyperLink ID="hlBookingList" runat="server">Booking Manager</asp:HyperLink></li>              
+                                </ul>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplProduct" runat="server">Product</asp:HyperLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="alert alert-success" role="alert">
+                <%=Session["SuccessMessage"] %>
+            </div>
+            <div class="alert alert-info" role="alert">
+                <%=Session["InfoMessage"] %>
+            </div>
+            <div class="alert alert-warning" role="alert">
+                <%=Session["WarningMessage"] %>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <%=Session["ErrorMessage"] %>
+            </div>
+            <asp:UpdatePanel ID="updatePanelMessage" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+                    <div style="width: 100%;" id="divMessage" runat="server" visible="false">
+                        <asp:Label ID="labelMessage" runat="server"></asp:Label>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:ContentPlaceHolder ID="AdminContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="birthday-panel" class="hidden">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>Contact</th>
+                    <th>Agency</th>
+                </tr>
+                <tr>
+                    <asp:Repeater runat="server" ID="rptBirthday">
+                        <ItemTemplate>
+                            <div title="AgencyContact" style="display: block; margin-top: 6px">
+                                <td>
+                                    <a href='AgencyEdit.aspx?NodeId=1&SectionId=15&AgencyId=<%#Eval("Agency.Id") %>'>
+                                        <%#Eval("Name")%></a></td>
+                                <td>
+                                    <a href='AgencyEdit.aspx?NodeId=1&SectionId=15&AgencyId=<%#Eval("Agency.Id") %>'>
+                                        <%#Eval("Agency.Name")%></a></td>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </tr>
+            </table>
+        </div>
+        <footer>
+        </footer>
+        <a href="javascript:" id="return-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </form>
+    <script type="text/javascript" src="/scripts/jquery/v3.1.1/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jqueryui/v1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/jqueryui/v1.12.1/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap/v3.3.7/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/scripts/datetimepicker/v2.5.4/jquery.datetimepicker.full.min.js"></script>
+    <script type="text/javascript" src="/scripts/colorbox/v1.6.4/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/scripts/autosize/v3.0.20/autosize.min.js"></script>
+    <script type="text/javascript" src="/scripts/inputmask/v3.3.6/jquery.inputmask.bundle.min.js"></script>
+    <script type="text/javascript" src="/scripts/inputmask/v3.3.6/inputmask.binding.js"></script>
+    <script type="text/javascript" src="/scripts/html2canvas/v1.0.0/html2canvas.js"></script>
+    <script type="text/javascript" src="/scripts/angularjs/v1.6.6/angular.js"></script>
+    <script type="text/javascript" src="/scripts/angularfilter/v0.5.17/angular-filter.js"></script>
+    <script type="text/javascript" src="/scripts/datatable/v1.10.16/jquery.datatables.min.js"></script>
+    <script type="text/javascript" src="/scripts/datatable/v1.10.16/datatables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="/scripts/jqueryvalidation/v1.17.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/scripts/jqueryvalidation/v1.17.0/additional-methods.min.js"></script>
+    <script type="text/javascript" src="/scripts/scrollsneak/scrollsneak.js"></script>
+    <script type="text/javascript" src="/scripts/filesaver/filesaver.js"></script>
+    <script type="text/javascript" src="/scripts/blob/blob.js"></script>
+    <script type="text/javascript" src="/scripts/sticky/v1.12.3/jquery.sticky-kit.js"></script>
+    <script type="text/javascript" src="/scripts/sticky/v1.0.4/jquery.sticky.js"></script>
+    <script type="text/javascript" src="/scripts/readmore/readmore.js"></script>
+    <script type="text/javascript" src="/modules/sails/admin/app.module.js"></script>
+    <script>
+        var tooltip = {
+            config: function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    trigger: "hover",
+                    html: true,
+                    container: "body",
+                });
+            },
+
+            hideIfBlank: function () {
+                $('[data-toggle="tooltip"]').each(function (i, e) {
+                    if ($(e).attr("data-original-title").trim() == "") {
+                        $(e).hide();
+                    }
+                })
+            }
+        }
+        var popOver = {
+            configBirdayReminder: function () {
+                $("#birthday-reminder").popover({
+                    html: true,
+                    placement: "bottom",
+                    title: "<em>Birthday reminder <%=DateTime.Today.ToString("dd/MM/yyyy")%></em>",
+                    content: $("#birthday-panel").html(),
+                    container: "body",
+                });
+            },
+
+            configBookingPending: function () {
+                $("#bookingpending").popover({
+                    html: true,
+                    placement: "bottom",
+                    content: $("#bookingpending-panel").html(),
+                    container: "body",
+                })
+            }
+        }
+        var textArea = {
+            autosize: function () {
+                autosize($("textarea"));
+            }
+        }
+        var message = {
+            hideIfBlank: function () {
+                $("[role='alert']").each(function (i, e) {
+                    if ($(e).html().trim() == "") {
+                        $(e).hide();
+                    }
+                })
+            }
+        }
+        var input = {
+            removeMultipleSpace: function () {
+                $("[type = 'text'], textarea").blur(function () {
+                    $(this).val($(this).val().replace(/[ \t]+/gm, " "));
+                })
+            }
+        }
+        $(function () {
+            tooltip.config();
+            tooltip.hideIfBlank();
+            popOver.configBirdayReminder();
+            popOver.configBookingPending();
+            textArea.autosize();
+            message.hideIfBlank();
+            input.removeMultipleSpace();
+        });
+    </script>
+    <script>
+        $('body').on('click', function (e) {
+            if ($(e.target).data('toggle') !== 'popover'
+                && $(e.target).parents('[data-toggle="popover"]').length === 0
+                && $(e.target).parents('.popover.in').length === 0) {
+                $('[data-toggle="popover"]').popover('hide');
+            }
+        });
+    </script>
+    <script>
+        $(function () {
+            $("[data-control='datetimepicker']").datetimepicker({
+                timepicker: false,
+                format: 'd/m/Y',
+                scrollInput: false,
+                scrollMonth: false,
+            });
+            if (jQuery(window).width() < 1000) {
+                $("[data-control='datetimepicker']").focus(function () {
+                    $(this).blur();
+                })
+            }
+            $("[data-control='datepicker-inline']").datetimepicker({
+                timepicker: false,
+                format: 'd/m/Y',
+                inline: true,
+                value: '<%=DateTime.Today.ToString("dd/MM/yyyy")%>',
+            });
+        })
+        $(document).ready(function () {
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            function EndRequestHandler(sender, args) {
+                $(function () {
+                    $("[data-control='datetimepicker']").datetimepicker({
+                        timepicker: false,
+                        format: 'd/m/Y',
+                        scrollInput: false,
+                        scrollMonth: false,
+                    })
+                })
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".checkbox label").each(function (i, e) {
+                var label = $(e).find("label").html();
+                $(e).append(label);
+                $(e).find("label").remove();
+            });
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".radio label").each(function (i, e) {
+                var label = $(e).find("label").html();
+                $(e).append(label);
+                $(e).find("label").remove();
+            });
+        })
+    </script>
+    <script>
+        function formatPhoneNumber(phoneNumberString) {
+            var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+            var match = cleaned.match(/(\d{4})(\d{3})(\d{1,})$/)
+            if (match) {
+                return '' + match[1] + '.' + match[2] + '.' + match[3]
+            }
+            return null
+        }
+        $(document).ready(function () {
+            $(".phone").each(function (i, e) {
+                $(e).html(formatPhoneNumber($(e).html()));
+            });
+
+            $("[data-control='phoneinputmask']").inputmask({
+                'mask': '9999[.999][.9999]',
+                'placeholder': '',
+                'greedy': false,
+            });
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu .submenu--collapser').on('click', function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+                $('.dropdown-submenu .submenu--collapser').not($(this)).next('ul').hide();
+            });
+        });
+    </script>
+    <script>
+        //Scoll xuống vị trí theo id
+        function goToByScroll(id) {
+            $('html,body').animate({ scrollTop: $("#" + id).offset().top }, 'slow');
+        }
+    </script>
+    <script>
+        // ===== Scroll to Top ==== 
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function () {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop: 0                       // Scroll to top of body
+            }, 500);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            let index = 0;
+            let readmoreInterval = null;
+            let articles = $('article').filter(function (i, obj) {
+                return obj.innerText != '';
+            })
+            readmoreInterval = setInterval(function () {
+                $(articles[index]).readmore({
+                    collapsedHeight: 85,
+                });
+                index++;
+                if (index >= articles.length) {
+                    clearInterval(readmoreInterval);
+                }
+            }, 1)
+        });
+    </script>
+    <script>
+        function clearForm(panel) {
+            panel.find(':input').each(function () {
+                switch (this.type) {
+                    case 'password':
+                    case 'text':
+                    case 'textarea':
+                    case 'file':
+                    case 'select-multiple':
+                    case 'date':
+                    case 'number':
+                    case 'tel':
+                    case 'email':
+                        jQuery(this).val('');
+                        break;
+                    case 'checkbox':
+                    case 'radio':
+                        this.checked = false;
+                        break;
+                    case 'select-one':
+                        jQuery(this).val('0');
+                        break;
+                }
+            });
+        }
+    </script>
+    <script>
+        let submit = 0;
+        function checkDouble(control) {
+            if ($("#aspnetForm").valid()) submit++;
+            if (submit > 1) {
+                control.disabled = true;
+                control.value = 'Please wait...';
+                return false;
+            }
+        }
+    </script>
+    <script>
+        function getParameterValues(param) {
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0] == param) {
+                    return urlparam[1];
+                }
+            }
+        }
+        function addParameterToUrl(parameterString) {
+            var newurl = '';
+            if (window.location.search == '')
+                newurl = window.location.protocol + '//' + window.location.host + window.location.pathname + '?' + parameterString;
+            else
+                newurl = window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.search + '&' + parameterString;
+            window.history.pushState({ path: newurl }, '', newurl);
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.sticky').stick_in_parent({ enable_bottoming: false });
+        });
+    </script>
+    <script>
+        Array.prototype.remove = function () {
+            var what, a = arguments, L = a.length, ax;
+            while (L && this.length) {
+                what = a[--L];
+                while ((ax = this.indexOf(what)) !== -1) {
+                    this.splice(ax, 1);
+                }
+            }
+            return this;
+        };
+    </script>
+    <script>
+        Date.prototype.toDateAsString = function () {
+            var mm = this.getMonth() + 1;
+            var dd = this.getDate();
+
+            return [
+                    (mm > 9 ? '' : '0') + mm +"/",
+                    (dd > 9 ? '' : '0') + dd +"/",
+                    this.getFullYear()
+            ].join('');
+        };
+        String.prototype.toDate = function () {
+            var dateComponents = this.split("/")
+            console.log(new Date(dateComponents[2], dateComponents[1] - 1, dateComponents[0]));
+            return new Date(dateComponents[2],  dateComponents[0], dateComponents[1] - 1)
+        };
+    </script>
+    <asp:ContentPlaceHolder ID="Scripts" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
+

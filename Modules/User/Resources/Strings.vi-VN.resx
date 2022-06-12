@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CURRENTPASSWORD" xml:space="preserve">
+    <value>Mật khẩu hiện tại</value>
+  </data>
+  <data name="EDITACCOUNT" xml:space="preserve">
+    <value>Thay đổi thông tin cá nhân</value>
+  </data>
+  <data name="EDITPASSWORDCONFIRMATION" xml:space="preserve">
+    <value>Mật khẩu của bạn đã được cập nhật thành công.</value>
+  </data>
+  <data name="EDITPASSWORDCONFIRMERROR" xml:space="preserve">
+    <value>The confirmation password has to be the same as the new password.</value>
+  </data>
+  <data name="EDITPASSWORDCURRENTERROR" xml:space="preserve">
+    <value>Mật khẩu hiện tại nhập sai.</value>
+  </data>
+  <data name="EDITPROFILECONFIRMATION" xml:space="preserve">
+    <value>Thông tin cá nhân đã được cập nhật thành công.</value>
+  </data>
+  <data name="EDITPROFILEINFO" xml:space="preserve">
+    <value>Cập nhật thông tin cá nhân, lưu ý rằng email của bạn sẽ được đảm bảo không cung cấp cho bên thứ ba.</value>
+  </data>
+  <data name="EDITPROFILETITLE" xml:space="preserve">
+    <value>Cập nhật tài khoản</value>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EMAILINVALID" xml:space="preserve">
+    <value>Địa chỉ email không hợp lệ</value>
+  </data>
+  <data name="EMAILREQUIRED" xml:space="preserve">
+    <value>Cần phải có email</value>
+  </data>
+  <data name="FIRSTNAME" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="INVALIDPASSWORD" xml:space="preserve">
+    <value>Mật khẩu không hợp lệ. Mật khẩu phải có ít nhất 5 ký tự.</value>
+  </data>
+  <data name="LASTLOGINON" xml:space="preserve">
+    <value>Lần cuối</value>
+  </data>
+  <data name="LASTNAME" xml:space="preserve">
+    <value>Họ</value>
+  </data>
+  <data name="LOGGEDINTEXT" xml:space="preserve">
+    <value>Đăng nhập với tài khoản</value>
+  </data>
+  <data name="LOGIN" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LOGINERROR" xml:space="preserve">
+    <value>Có lỗi trong quá trình đăng nhập:</value>
+  </data>
+  <data name="LOGOUT" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="NEWPASSWORD" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+  </data>
+  <data name="NEWPASSWORDCONFIRMATION" xml:space="preserve">
+    <value>Mật khẩu mới (gõ lại)</value>
+  </data>
+  <data name="NOTAUTHENTICATED" xml:space="preserve">
+    <value>Bạn phải đăng nhập mới có thể thao tác.</value>
+  </data>
+  <data name="PASSWORD" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="PERSISTLOGIN" xml:space="preserve">
+    <value>Ghi nhớ</value>
+  </data>
+  <data name="REGISTER" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="REGISTERCONFIRMATION" xml:space="preserve">
+    <value>Cám ơn bạn đã đăng ký, mật khẩu của bạn đã được gửi về email {0}.</value>
+  </data>
+  <data name="REGISTEREDON" xml:space="preserve">
+    <value>Đã đăng ký</value>
+  </data>
+  <data name="REGISTEREMAILERROR" xml:space="preserve">
+    <value>Quá trình đăng ký thất bại bởi gặp lỗi khi gửi thông tin tài khoản của bạn qua email. Hãy thử lại lần sau.</value>
+  </data>
+  <data name="REGISTERINFO" xml:space="preserve">
+    <value>Hãy nhập vào tên đăng nhập mà bạn muốn sử dụng và địa chỉ email của bạn, mật khẩu sau đó sẽ được gửi về cho bạn theo địa chỉ email đó.</value>
+  </data>
+  <data name="REGISTERTITLE" xml:space="preserve">
+    <value>Đăng ký người dùng mới</value>
+  </data>
+  <data name="RESET" xml:space="preserve">
+    <value>Đặt lại mật khẩu</value>
+  </data>
+  <data name="RESETCONFIRMATION" xml:space="preserve">
+    <value>Một email với mật khẩu mới đã được gửi về {0}.</value>
+  </data>
+  <data name="RESETEMAILBODY" xml:space="preserve">
+    <value>Thông tin đăng nhập mới của bạn:
+
+Tên đăng nhập: {username}
+Mật khẩu: {password}</value>
+  </data>
+  <data name="RESETEMAILERROR" xml:space="preserve">
+    <value>Resetting of your password failed because an error occured while sending your account information. Please try to reset again later.</value>
+  </data>
+  <data name="RESETEMAILSUBJECT" xml:space="preserve">
+    <value>{site} cập nhật thông tin tài khoản.</value>
+  </data>
+  <data name="RESETINFO" xml:space="preserve">
+    <value>Nhập tên đăng nhập và địa chỉ email của bạn, mật khẩu mới sẽ được gửi về cho bạn.</value>
+  </data>
+  <data name="RESETTITLE" xml:space="preserve">
+    <value>Tạo lại mật khẩu</value>
+  </data>
+  <data name="RESETUSERERROR" xml:space="preserve">
+    <value>Không tìm thấy tài khoản có tên đăng nhập và email như đã nhập.</value>
+  </data>
+  <data name="SAVEPASSWORD" xml:space="preserve">
+    <value>Lưu mật khẩu mới</value>
+  </data>
+  <data name="SAVEPROFILE" xml:space="preserve">
+    <value>Lưu thông tin cá nhân</value>
+  </data>
+  <data name="TIMEZONE" xml:space="preserve">
+    <value>Múi giờ</value>
+  </data>
+  <data name="USEREXISTS" xml:space="preserve">
+    <value>Đã có người sử dụng tên đăng nhập {0}, cảm phiền bạn chọn lại tên đăng nhập khác.</value>
+  </data>
+  <data name="USERNAME" xml:space="preserve">
+    <value>Tên đăng nhập</value>
+  </data>
+  <data name="USERNAMEPASSWORDERROR" xml:space="preserve">
+    <value>Sai tên đăng nhập hoặc mật khẩu</value>
+  </data>
+  <data name="USERNAMEPASSWORDMISSING" xml:space="preserve">
+    <value>Yêu cầu phải nhập cả tên đăng nhập và mật khẩu</value>
+  </data>
+  <data name="USERNAMEREQUIRED" xml:space="preserve">
+    <value>Phải có tên đăng nhập</value>
+  </data>
+  <data name="USERNOTFOUND" xml:space="preserve">
+    <value>Người dùng có ID {0} không còn tồn tại.</value>
+  </data>
+  <data name="VIEWPROFILETITLE" xml:space="preserve">
+    <value>Thông tin cá nhân của {0}</value>
+  </data>
+  <data name="WEBSITE" xml:space="preserve">
+    <value>Website</value>
+  </data>
+</root>

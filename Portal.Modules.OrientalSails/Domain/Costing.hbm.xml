@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.Costing, Portal.Modules.OrientalSails" table="os_Costing">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+    <property name="Adult" type="double">
+      <column name="AdultCost" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Child" type="double">
+      <column name="ChildCost" sql-type="money" not-null="false"/>
+    </property>
+    <property name="Baby" type="double">
+      <column name="BabyCost" sql-type="money" not-null="false"/>
+    </property>
+    <many-to-one name="Type" class="Portal.Modules.OrientalSails.Domain.CostType, Portal.Modules.OrientalSails">
+      <column name="CostTypeId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Table" class="Portal.Modules.OrientalSails.Domain.CostingTable, Portal.Modules.OrientalSails">
+      <column name="TableId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

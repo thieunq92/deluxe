@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="CMS.Modules.TourManagement.Domain.TourRelated, CMS.Modules.TourManagement" table="tmt_TourRelated">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK_tmt_TourBoatPriceConfig"/>
+			<generator class="native" />
+		</id>
+    <many-to-one name="Tour" class="CMS.Modules.TourManagement.Domain.Tour, CMS.Modules.TourManagement" lazy="false">
+      <column name="TourId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Related" class="CMS.Modules.TourManagement.Domain.Tour, CMS.Modules.TourManagement" lazy="false">
+      <column name="RelatedId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

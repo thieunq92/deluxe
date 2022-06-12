@@ -1,0 +1,41 @@
+.bit_container .option_grouplist .facility_box li
+{
+	list-style: none;
+	border	  : 0px;
+	background-color: Transparent;
+	background-image: none;
+	text-align: left;
+	list-style-type: disc;
+	margin	: 0px;
+	margin-left	: 20px;	
+	padding	: 0px;
+}
+
+.bit_container .settings_grouplist .facility_box li
+{
+	list-style: none;
+	border	  : 0px;
+	background-color: Transparent;
+	background-image: none;
+	text-align: left;
+	list-style-type: disc;
+	margin	: 0px;
+	margin-left	: 20px;	
+	padding	: 0px;
+}
+
+.hotel_detail .image_col
+{
+	float	: left;
+	max-width	: 250px;
+}
+
+.hotel_detail .info_col
+{
+	padding-left	: 250px;
+}
+
+.facility_box img
+{
+	max-width	: 200px;
+}

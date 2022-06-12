@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Portal.Modules.OrientalSails"
+                   namespace="Portal.Modules.OrientalSails.Domain">
+  <class name="ExpenseService" table="os_ExpenseService" lazy="true">
+    <cache usage="read-write"/>
+    <id name="Id">
+      <generator class="native" />
+    </id>
+    <property name="Name" access="field.camelcase"/>
+    <property name="Cost" access="field.camelcase"/>
+    <property name="Phone" access="field.camelcase"/>
+    <property name="IsOwnService" />
+    <property name="Paid" />
+    <property name="PaidDate" />
+    <property name="Group" column="`Group`"/>
+    <property name="LockStatus"></property>
+    <many-to-one name="Type" column="CostTypeId"/>
+    <many-to-one name="Expense" column="ExpenseId"/>
+    <many-to-one name="Supplier" column="SupplierId" access="field.camelcase"/>
+    <many-to-one name="Driver" column="DriverId"/>
+    <bag name="ListExpenseHistory" inverse="true" batch-size="10" cascade="all-delete-orphan">
+      <key column="ExpenseServiceId"/>
+      <one-to-many class="ExpenseHistory"/>
+    </bag>
+  </class>
+</hibernate-mapping>

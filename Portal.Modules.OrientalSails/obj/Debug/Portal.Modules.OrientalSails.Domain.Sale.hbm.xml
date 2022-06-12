@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.Sale, Portal.Modules.OrientalSails" table="os_Sale">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="SaleId" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Customer__59FA5E80"/>
+			<generator class="native" />
+		</id>
+    <many-to-one name="User" class="CMS.Core.Domain.User, CMS.Core">
+      <column name="UserId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <bag name="Users" table="os_SaleUser" cascade="all">
+      <key column="SaleId"/>
+      <many-to-many column="UserId"
+			   class="CMS.Core.Domain.User, CMS.Core"/>
+    </bag>
+	</class>
+</hibernate-mapping>

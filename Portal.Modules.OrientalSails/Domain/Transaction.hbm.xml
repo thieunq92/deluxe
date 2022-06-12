@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.Transaction, Portal.Modules.OrientalSails" table="os_Transaction">
+		<id name="Id" type="Int32" unsaved-value="0">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Booking__5FB337D6"/>
+			<generator class="native" />
+		</id>
+    <many-to-one name="CreatedBy" class="CMS.Core.Domain.User, CMS.Core">
+      <column name="CreatedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+		<property name="CreatedDate" type="DateTime">
+			<column name="CreatedDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+		<property name="TransactionType" type="int">
+			<column name="TransactionType" length="8" sql-type="int" not-null="false"/>
+		</property>
+    <property name="USDAmount" type="double">
+      <column name="USDAmount" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="VNDAmount" type="double">
+      <column name="VNDAmount" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="AgencyName" type="string">
+      <column name="AgencyName" length="8" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Note" type="string">
+      <column name="Note" length="8" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="IsExpense" type="Boolean">
+      <column name="IsExpense" length="8" sql-type="bit" not-null="false"/>
+    </property>
+    <many-to-one name="Agency" class="Portal.Modules.OrientalSails.Domain.Agency, Portal.Modules.OrientalSails">
+      <column name="AgencyId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="Booking" class="Portal.Modules.OrientalSails.Domain.Booking, Portal.Modules.OrientalSails">
+      <column name="BookingId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Portal.Modules.OrientalSails.Domain.Cruise, Portal.Modules.OrientalSails" table="os_Cruise">
+		<id name="Id" type="Int32" unsaved-value="-1">
+			<column name="Id" length="4" sql-type="int" not-null="true" unique="true" index="PK__os_Booking__5FB337D6"/>
+			<generator class="native" />
+		</id>
+		<property name="Deleted" type="Boolean">
+			<column name="Deleted" length="1" sql-type="bit" not-null="false"/>
+		</property>
+    <many-to-one name="CreatedBy" class="CMS.Core.Domain.User, CMS.Core">
+      <column name="CreatedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+		<property name="CreatedDate" type="DateTime">
+			<column name="CreatedDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+    <many-to-one name="ModifiedBy" class="CMS.Core.Domain.User, CMS.Core">
+      <column name="ModifiedBy" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+		<property name="ModifiedDate" type="DateTime">
+			<column name="ModifiedDate" length="8" sql-type="datetime" not-null="false"/>
+		</property>
+    <property name="Name" type="string">
+      <column name="Name" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Description" type="string">
+      <column name="Description" sql-type="ntext" not-null="false"/>
+    </property>
+    <property name="Image" type="string">
+      <column name="Image" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="RoomPlan" type="string">
+      <column name="RoomPlan" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <property name="Code" type="string">
+      <column name="CodeName" sql-type="nvarchar" not-null="false"/>
+    </property>
+    <bag name="Trips" table="os_CruiseTrip" cascade="all">
+      <key column="CruiseId"/>
+      <many-to-many column="TripId"
+			   class="Portal.Modules.OrientalSails.Domain.SailsTrip, Portal.Modules.OrientalSails"/>
+    </bag>
+	</class>
+</hibernate-mapping>

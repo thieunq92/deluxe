@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Portal.Modules.OrientalSails.Domain.AgencyCommission, Portal.Modules.OrientalSails" table="os_AgencyCommission">
+    <id name="Id" type="Int32" unsaved-value="0">
+      <column name="Id" length="4" sql-type="int" not-null="true" unique="true"/>
+      <generator class="identity" />
+    </id>
+    <property name="CommissionAdultUSD" type="Double">
+      <column name="CommissionAdultUSD" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="CommissionAdultVND" type="Double">
+      <column name="CommissionAdultVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="CommissionChildUSD" type="Double">
+      <column name="CommissionChildUSD" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="CommissionChildVND" type="Double">
+      <column name="CommissionChildVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="CommissionBabyUSD" type="Double">
+      <column name="CommissionBabyUSD" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="CommissionBabyVND" type="Double">
+      <column name="CommissionBabyVND" length="8" sql-type="money" not-null="false"/>
+    </property>
+    <property name="ValidFrom" type="DateTime">
+      <column name="ValidFrom" length="8" sql-type="datetime" not-null="false"/>
+    </property>
+    <many-to-one name="AgencyLevel" class="Portal.Modules.OrientalSails.Domain.AgencyLevel, Portal.Modules.OrientalSails">
+      <column name="AgencyLevelId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+    <many-to-one name="SailsTrip" class="Portal.Modules.OrientalSails.Domain.SailsTrip, Portal.Modules.OrientalSails">
+      <column name="TripId" length="4" sql-type="int" not-null="false"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

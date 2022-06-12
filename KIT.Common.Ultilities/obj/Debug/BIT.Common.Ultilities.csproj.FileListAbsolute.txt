@@ -1,0 +1,13 @@
+D:\Working\Source\ATMBooking\KIT.Common.Ultilities\bin\Debug\KIT.Common.Ultilities.dll
+D:\Working\Source\ATMBooking\KIT.Common.Ultilities\bin\Debug\KIT.Common.Ultilities.pdb
+D:\Working\Source\ATMBooking\KIT.Common.Ultilities\obj\Debug\ResolveAssemblyReference.cache
+D:\Working\Source\ATMBooking\KIT.Common.Ultilities\obj\Debug\KIT.Common.Ultilities.dll
+D:\Working\Source\ATMBooking\KIT.Common.Ultilities\obj\Debug\KIT.Common.Ultilities.pdb
+C:\Users\thieu\Desktop\ATMBooking\KIT.Common.Ultilities\bin\Debug\KIT.Common.Ultilities.dll
+C:\Users\thieu\Desktop\ATMBooking\KIT.Common.Ultilities\bin\Debug\KIT.Common.Ultilities.pdb
+C:\Users\thieu\Desktop\ATMBooking\KIT.Common.Ultilities\obj\Debug\KIT.Common.Ultilities.dll
+C:\Users\thieu\Desktop\ATMBooking\KIT.Common.Ultilities\obj\Debug\KIT.Common.Ultilities.pdb
+C:\Users\thieu\Desktop\deluxegrouptours\deluxegrouptours\KIT.Common.Ultilities\bin\Debug\KIT.Common.Ultilities.dll
+C:\Users\thieu\Desktop\deluxegrouptours\deluxegrouptours\KIT.Common.Ultilities\bin\Debug\KIT.Common.Ultilities.pdb
+C:\Users\thieu\Desktop\deluxegrouptours\deluxegrouptours\KIT.Common.Ultilities\obj\Debug\KIT.Common.Ultilities.dll
+C:\Users\thieu\Desktop\deluxegrouptours\deluxegrouptours\KIT.Common.Ultilities\obj\Debug\KIT.Common.Ultilities.pdb

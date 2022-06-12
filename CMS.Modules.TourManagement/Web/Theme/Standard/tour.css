@@ -1,0 +1,333 @@
+.author
+{
+	font-weight: bold;
+}
+
+.ajax__tab_panel
+{
+	font-size		: 12px;
+	font-family		: Arial,Tahoma, Verdana, Helvetica, sans-serif;
+}
+
+.tour_list ul
+{
+	margin-left		: 0px;
+	padding-left	: 0px;
+	list-style		: none;
+}
+
+.tour_list li
+{
+	margin-left		: 0px;
+	padding			: 5px;
+}
+
+.tour_list li h4
+{
+	margin-top		: 5px;
+	margin-bottom	: 5px;
+}
+
+.tour_list li span
+{
+	font-family		: Arial,Tahoma, Verdana, Helvetica, sans-serif;
+	font-size		: 11px;
+	padding-left	: 10px;
+}
+
+.tour_list li img
+{
+	padding-left	: 10px;
+}
+
+.tour_list li .tour_list_image
+{
+	width	: 150px;
+	padding : 10px;
+}
+
+.tour_list li p
+{
+	font-family		: Arial,Tahoma, Verdana, Helvetica, sans-serif;
+	font-size		: 11px;
+}
+
+.tour_list_image
+{
+	width	: 150px;
+}
+
+.tour_list .fromPrice
+{
+	font-weight	: bold;
+}
+
+.tour_detail .fromPrice
+{
+	font-weight : bold;
+	color		: Red;
+}
+
+.tour_detail .image_col
+{
+	float	: left;
+	width	: 240px;
+}
+
+.tour_detail .image_col img
+{
+	width	: 240px;
+}
+
+.tour_detail .info_col
+{
+	padding-left	: 260px;
+}
+.tour_list .list_item_alternate
+{
+	/*border	: solid 1px gray;*/
+	background-color	: #FFFFFF;
+	background-image	: url(./images/listbg_alternate.gif);
+	background-repeat	: no-repeat;
+}
+
+.featured_tour li
+{
+	list-style-image: url(./images/arrow.gif);
+}
+
+.featured_tour
+{
+	text-align: center;
+}
+.featured_tour img
+{
+	width	: 90%;
+}
+
+.featured_tour ul
+{
+	margin-left	: 0px;
+	padding-left: 40px;
+	text-align	: left;
+	color		: Red;
+	font-size	: 11px;
+}
+
+.featured_tour li
+{
+	margin-left	: 0px;
+	padding-left: 0px;
+}
+
+.tour_quick_list ul
+{
+	margin-left	: 0px;
+	padding-left: 40px;
+	text-align	: left;
+	color		: Red;
+	font-size	: 11px;
+}
+
+.tour_quick_list li
+{
+	margin-left	: 0px;
+	padding-left: 0px;
+	list-style-image: url(./images/arrow.gif);
+}
+
+.tour_quick_list li a
+{
+	color: Red;
+	text-decoration: none;
+}
+
+.tour_quick_list li a:visited
+{
+	color: Red;
+	text-decoration: none;
+}
+
+.tour_quick_list li a:hover
+{
+	color: Red;
+	font-style:italic;
+}
+
+#side_content h3
+{
+	margin: 0px;	
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	font-size: 12px;
+	background-image: url(./images/house.gif);	
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+}
+
+#side_content h4
+{
+	padding: 0px;
+	margin	: 0px;
+	margin-top: 5px;
+}
+
+#side_content h4 a
+{
+	text-decoration: none;
+}
+
+#side_content h4 a:visited
+{
+	text-decoration: none;
+}
+
+#side_content h3 a
+{
+	text-decoration: none;
+}
+
+#side_content h3 a:visited
+{
+	text-decoration: none;
+}
+
+.featured_tour li a
+{
+	color: Red;
+	text-decoration: none;
+}
+
+.featured_tour li a:visited
+{
+	color: Red;
+	text-decoration: none;
+}
+
+.featured_tour li a:hover
+{
+	color: Red;
+	font-style:italic;
+}
+
+.tour_description h4
+{
+	margin	: 0px;
+	border-bottom: solid 2px gray;
+}
+
+.tour_description
+{
+	border: solid 1px gray;
+	padding	: 10px;
+}
+
+.tour_view_detail
+{
+	font-size	: 12px;
+}
+
+.facility_details
+{
+	padding	: 0px;
+}
+
+.facility_details p
+{
+	margin-left: 10px;
+}
+
+.facility_details td
+{
+	padding	: 0px;
+	margin	: 0px;
+}
+
+.tour_facility .others
+{
+	border : solid 1px gray;
+	padding-left: 10px;
+}
+
+.tour_facility .others h4
+{
+border-bottom:2px solid gray;
+margin:0;
+}
+
+.tour_facility h4
+{
+	padding-top: 10px;
+	margin-bottom: 0px;
+}
+
+.tour_view_price
+{
+	padding-top	: 20px;
+}
+
+.tour_view_price input
+{
+	background-color	: #F0F0F0;
+	border				: none;
+	color				: Black;
+}
+
+.tour_view_price td
+{
+	background-color	: #F0F0F0;
+	border				: solid 1px black;
+}
+
+.tour_view_price td input
+{
+	text-align			: right;
+}
+
+.tour_list .pager
+{
+	padding	: 10px;
+	background-color : Transparent;
+}
+
+.tour_list table
+{
+	width	: 100%;
+}
+
+.tour_list .imageCell
+{
+	width: 175px;
+}
+
+.facility_box
+{
+	margin-top	: 0px;
+	background-color: #F0F0F0;
+	width	: 191px;
+	margin-left: 0px;
+	border : 1px;
+	text-align: left;
+}
+
+.facility_box_bottom
+{
+	padding-bottom: 2px;
+	background-image: url(./images/boxbottom.gif);
+	background-position: bottom left;
+	background-repeat:no-repeat;	
+}
+
+.facility_box_content
+{
+	background-image: url(./images/boxtop.gif);
+	background-position: top left;
+	background-repeat:no-repeat;	
+}
+
+.facility_box img
+{
+	max-width	: 190px;
+}
+
