@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
@@ -37,7 +37,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OldToolsVersion>4.0</OldToolsVersion>
     <UseIISExpress>false</UseIISExpress>
     <TargetFrameworkProfile />
@@ -46,6 +46,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -70,6 +71,7 @@
     <DebugType>full</DebugType>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -94,6 +96,7 @@
     <DebugType>none</DebugType>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\CMS.Core.csproj">
@@ -134,6 +137,10 @@
     <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\net35\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Web.Extensions, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CMS.Web.Extensions\bin\CMS.Web.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="FredCK.FCKeditorV2, Version=2.5.2912.21007, Culture=neutral, PublicKeyToken=4f86767c9b519a06, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -207,6 +214,9 @@
     <Reference Include="System.Web">
       <Name>System.Web</Name>
     </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml">
@@ -2198,48 +2208,6 @@
     <EmbeddedResource Include="obj\Debug\CMS.Web.Rss.resources" />
     <EmbeddedResource Include="obj\Debug\CMS.Web.Templates.Controls.NavigationLevelTwo.resources" />
     <EmbeddedResource Include="obj\Debug\CMS.Web.Templates.Controls.NavigationLevelZeroOne.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.ConnectionEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Controls.AdminTemplate.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Controls.Footer.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Controls.Header.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Controls.Navigation.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Controls.Resources.Strings.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Login.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.MenuEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Modules.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.NodeEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.RebuildIndex.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.RoleEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Roles.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.SectionAttachNode.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.SectionAttachTemplate.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.SectionEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Sections.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.SiteAliasEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.SiteEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.TemplateEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.TemplatePreview.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Templates.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.TemplateSection.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.UserEdit.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin.Users.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Admin._Default.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.EditProfile.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.ModuleAdminHeader.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.ModuleAdminTemplate.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.Navigation.HierarchicalMenu.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.Register.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.ResetPassword.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.Resources.Strings.it.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.Resources.Strings.nl.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.Resources.Strings.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.Resources.Strings.sv.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Controls.ViewProfile.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Global.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Profile.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Rss.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Templates.Controls.NavigationLevelTwo.resources" />
-    <EmbeddedResource Include="obj\Release\CMS.Web.Templates.Controls.NavigationLevelZeroOne.resources" />
     <EmbeddedResource Include="Profile.aspx.resx">
       <DependentUpon>Profile.aspx.cs</DependentUpon>
       <SubType>Designer</SubType>

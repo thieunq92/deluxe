@@ -104,7 +104,7 @@ namespace Portal.Modules.OrientalSails.Web.Admin
         {
             get
             {
-                var year = DateTime.Today.Year;
+               var year = DateTime.Today.Year;
                 try
                 {
                     year = Int32.Parse(ddlYearSearching.SelectedValue);

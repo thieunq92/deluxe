@@ -7,7 +7,7 @@
     <property name="cache.use_second_level_cache">true</property>
     <property name="cache.use_query_cache" >true</property>
     <property name="cache.provider_class">NHibernate.Caches.SysCache.SysCacheProvider, NHibernate.Caches.SysCache</property>
-    <property name="connection.connection_string">Server=.; Database=deluxe; Uid=sa; Pwd=123456;</property>
+    <property name="connection.connection_string">Server=162.246.16.98,1433\MSSQLSERVER2019; Database=deluxegrouptours; Uid=modeluxetour; Pwd=Vnq804%i;</property>
     <property name="show_sql">true</property>
   </session-factory>
 </hibernate-configuration>
